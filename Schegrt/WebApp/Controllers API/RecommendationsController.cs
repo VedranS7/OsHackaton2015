@@ -25,7 +25,8 @@ namespace WebApp.Controllers_API
             List<RecommendedUserDto> result = new List<RecommendedUserDto>();
             if (initiatior != null)
             {
-                foreach(GeneralUser user in db.Users)
+                List<GeneralUser> otherTypeOfUsers = initiatior is StudentUser ? db.Users.OfType<ProviderUser>().Cast<GeneralUser>().ToList() : db.Users.OfType<StudentUser>().Cast<GeneralUser>().ToList();
+                foreach(GeneralUser user in new ProviderMatcher(initiatior).GetMatchingProvider(otherTypeOfUsers))
                 {
                     if(user.GetType() != initiatior.GetType())
                     {

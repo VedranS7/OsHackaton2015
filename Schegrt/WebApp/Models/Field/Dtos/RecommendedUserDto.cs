@@ -16,6 +16,7 @@ namespace WebApp.Models.Field.Dtos
         public RecommendedUserDto(GeneralUser user)
         {
             Id = user.Id;
+            Name = user.GetName();
             Location = user.Location;
         }
     }

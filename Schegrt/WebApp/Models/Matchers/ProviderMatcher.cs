@@ -31,7 +31,10 @@ namespace WebApp.Models.Matchers
 						searchedScore++;
 					}
 				}
-				scoredList.Add(new _generalScored {user = searchedUser,score = searchedScore });
+                if(searchedScore > 0)
+                {
+                    scoredList.Add(new _generalScored { user = searchedUser, score = searchedScore });
+                }
 			}
 			List<GeneralUser> returnList = new List<GeneralUser>();
 			foreach(_generalScored scored in scoredList.OrderByDescending(x=>x.score))

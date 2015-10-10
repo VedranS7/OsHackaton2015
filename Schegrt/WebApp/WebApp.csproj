@@ -203,6 +203,7 @@
     <Compile Include="Models\Field\Dtos\UserDataDto.cs" />
     <Compile Include="Models\Field\FieldOfInterest.cs" />
     <Compile Include="Models\Field\Project.cs" />
+    <Compile Include="Models\Field\ProjectFOI.cs" />
     <Compile Include="Models\Field\UserFOI.cs" />
     <Compile Include="Models\Field\ViewModels\FieldOfInterestViewModel.cs" />
     <Compile Include="Models\Field\ViewModels\InterestViewModel.cs" />
