@@ -197,7 +197,6 @@
     <Compile Include="Models\Field\FieldOfInterest.cs" />
     <Compile Include="Models\Field\Project.cs" />
     <Compile Include="Models\Field\UserFOI.cs" />
-    <Compile Include="Models\Field\ViewModels\FieldOfInterestViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\User.cs" />
@@ -274,21 +273,24 @@
     <Content Include="Views\Providers\Details.cshtml" />
     <Content Include="Views\Providers\Edit.cshtml" />
     <Content Include="Views\Providers\Index.cshtml" />
-    <Content Include="Views\Interests\Create.cshtml" />
-    <Content Include="Views\Interests\Delete.cshtml" />
-    <Content Include="Views\Interests\Details.cshtml" />
-    <Content Include="Views\Interests\Edit.cshtml" />
-    <Content Include="Views\Interests\Index.cshtml" />
-    <Content Include="Views\Projects\Create.cshtml" />
-    <Content Include="Views\Projects\Delete.cshtml" />
-    <Content Include="Views\Projects\Details.cshtml" />
-    <Content Include="Views\Projects\Edit.cshtml" />
-    <Content Include="Views\Projects\Index.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Student\Create.cshtml" />
     <Content Include="Views\Student\Delete.cshtml" />
     <Content Include="Views\Student\Details.cshtml" />
     <Content Include="Views\Student\Edit.cshtml" />
     <Content Include="Views\Student\Index.cshtml" />
+    <Content Include="Views\Projects\Create.cshtml" />
+    <Content Include="Views\Projects\Delete.cshtml" />
+    <Content Include="Views\Projects\Details.cshtml" />
+    <Content Include="Views\Projects\Edit.cshtml" />
+    <Content Include="Views\Projects\Index.cshtml" />
+=======
+    <Content Include="Views\Interests\Create.cshtml" />
+    <Content Include="Views\Interests\Delete.cshtml" />
+    <Content Include="Views\Interests\Details.cshtml" />
+    <Content Include="Views\Interests\Edit.cshtml" />
+    <Content Include="Views\Interests\Index.cshtml" />
+>>>>>>> 1fc3f70352bae9dc3487a58754c5db45af4094ef
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

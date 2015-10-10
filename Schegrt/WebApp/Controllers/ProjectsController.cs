@@ -1,25 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using WebApp.Models;
 using WebApp.Models.Field;
 
 namespace WebApp.Controllers
 {
-    public class ProjectsController : Controller
+	public class ProjectsController : Controller
     {
         private DatabaseContext db = new DatabaseContext();
 
         // GET: Projects
         public ActionResult Index()
         {
-            return View(db.Projects.ToList());
-        }
+			return View(db.Projects.ToList());
+		}
 
         // GET: Projects/Details/5
         public ActionResult Details(int? id)
@@ -47,7 +43,7 @@ namespace WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,StartDate,EndDate")] Project project)
+        public ActionResult Create([Bind(Include = "Id,Name,StartDate,EndDate")] Project project)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +75,7 @@ namespace WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,StartDate,EndDate")] Project project)
+        public ActionResult Edit([Bind(Include = "Id,Name,StartDate,EndDate")] Project project)
         {
             if (ModelState.IsValid)
             {
