@@ -157,6 +157,26 @@ namespace WebApp.Controllers
                 {
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
+                    ApplicationDbContext db = new ApplicationDbContext();
+
+                    GeneralUser generalUser = null;
+                    if (user.Type == 1)
+                        generalUser = new StudentUser() { Email = user.Email };
+                    else generalUser = new ProviderUser() { Email = user.Email };
+
+                    ApplicationUser savedUser = db.Users.FirstOrDefault(x => x.Id == user.Id);
+                    savedUser.GeneralUser = generalUser;
+                    db.Entry(savedUser).State = System.Data.Entity.EntityState.Modified;
+
+                    try
+                    {
+                        db.SaveChanges();
+                    }
+                    catch (Exception e)
+                    {
+
+                    }
+
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);

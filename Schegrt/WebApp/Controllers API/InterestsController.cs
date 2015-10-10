@@ -11,6 +11,7 @@ using System.Web.Http.Description;
 using WebApp.Models;
 using WebApp.Models.Field;
 using WebApp.Models.Field.Dtos;
+using WebApp.Models.Field.ViewModels;
 
 namespace WebApp.Controllers_API
 {
@@ -30,14 +31,22 @@ namespace WebApp.Controllers_API
         }
 
         // POST: api/Interests
-        [ResponseType(typeof(UserFOI))]
-        public IHttpActionResult AddUserInterest(UserFOI userFOI)
+        [ResponseType(typeof(InterestViewModel))]
+        public IHttpActionResult AddUserInterest(InterestViewModel interest)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
+            GeneralUser user = db.Users.FirstOrDefault(u => u.Email == User.Identity.Name);
+            FieldOfInterest foi = db.Fields.FirstOrDefault(f => f.Id == interest.FOIId);
+            UserFOI userFOI = new UserFOI()
+            {
+                User = user,
+                Foi = foi,
+                Level = interest.Level
+            };
             db.UserFOIs.Add(userFOI);
             db.SaveChanges();
 
