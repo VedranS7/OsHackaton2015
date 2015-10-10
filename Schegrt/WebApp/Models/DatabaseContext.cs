@@ -17,9 +17,9 @@ namespace WebApp.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<GeneralUser>().ToTable("AspNetUsers")
-            //    .Map<StudentUser>(s => s.Requires("Type").HasValue(2))
-            //    .Map<ProviderUser>(p => p.Requires("Type").HasValue(2));
+            modelBuilder.Entity<GeneralUser>().ToTable("AspNetUsers");
+            modelBuilder.Entity<StudentUser>().Map<StudentUser>(s => { s.ToTable("AspNetUsers"); s.Requires("Type").HasValue((int)UserType.Student); });
+            modelBuilder.Entity<ProviderUser>().Map<ProviderUser>(s => { s.ToTable("AspNetUsers"); s.Requires("Type").HasValue((int)UserType.Provider); });
         }
     }
 }

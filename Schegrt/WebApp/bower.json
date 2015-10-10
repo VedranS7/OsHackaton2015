@@ -1,0 +1,12 @@
+{
+	"name": "Schegrt",
+
+	"devDependencies": {
+		"jquery": "1.11.1",
+		"select2": "4.0.0",
+		"angular": "1.4.5",
+		"angular-ui-router": "0.2.15",
+		"modernizr": "latest",
+		"bootstrap-sass-official": "latest"
+	}
+}

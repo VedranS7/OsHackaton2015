@@ -1,5 +1,3 @@
-bin/*
-obj/*
 *.BASE
 *.LOCAL
 *.REMOTE
@@ -8,10 +6,21 @@ obj/*
 *.LOCAL.*
 *.REMOTE.*
 packages/*
-*.suo
+.suo
 *.psess
 *.vsp
 
 Schegrt/packages/*
+
+Schegrt/WebApp/css/.sass-cache/*
+Schegrt/WebApp/node_modules/*
+Schegrt/WebApp/bower_components/*
+Schegrt/WebApp/aspnet_client/*
+*.log
+Schegrt/WebApp.idea/*
 Schegrt/WebApp/bin/*
 Schegrt/WebApp/obj/*
+
+/Schegrt/.vs/Schegrt/v14/.suo
+/Schegrt/.vs/config/*
+/Schegrt/.vs/*

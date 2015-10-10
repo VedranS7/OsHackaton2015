@@ -1,0 +1,40 @@
+// BOOTSTRAP CORE
+
+// Core variables and mixins
+//@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/variables";
+@import "../src/variables";
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins";
+
+// Core CSS
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/scaffolding";
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/type";
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/grid";
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/forms";
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/buttons";
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/button-groups";
+
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navs";
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/navbar";
+
+// Utility classes
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/utilities";
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/responsive-utilities";
+
+// Font
+//@import "../../bower_components/font-awesome/scss/font-awesome";
+
+@import "../src/main";
+@import "../src/footer";
+@import "../src/header";
+@import "../src/login";
+@import "../src/radio-button-group";
+@import "../src/typography";
+/*@import "../src/boxes";
+@import "../src/buttons";
+@import "../src/forms";
+
+@import "../src/grid";
+
+@import "../src/list";
+@import "../src/skills";
+*/
