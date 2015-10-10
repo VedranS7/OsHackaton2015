@@ -5,7 +5,7 @@ header {
 }
 
 .navbar-header {
-	width: 100%;
+	width: 80%;
 
 	a {
 		color: $navbar-default-link-color;
@@ -18,7 +18,10 @@ header {
 			font-weight: bold;
 			text-transform: uppercase;
 			
-			&:hover {
+			&:active,
+			&:focus,
+			&:hover,
+			&:visited {
 				background-color: transparent !important;
 				color: #F25050;
 			}
