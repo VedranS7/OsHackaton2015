@@ -21,7 +21,22 @@
 @import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/responsive-utilities";
 
 // Font
-//@import "../../bower_components/font-awesome/scss/font-awesome";
+@import "../../bower_components/font-awesome/scss/variables";
+$fa-font-path:        "/fonts" !default;
+@import "../../bower_components/font-awesome/scss/mixins";
+@import "../../bower_components/font-awesome/scss/path";
+@import "../../bower_components/font-awesome/scss/core";
+@import "../../bower_components/font-awesome/scss/larger";
+@import "../../bower_components/font-awesome/scss/fixed-width";
+@import "../../bower_components/font-awesome/scss/list";
+@import "../../bower_components/font-awesome/scss/bordered-pulled";
+@import "../../bower_components/font-awesome/scss/animated";
+@import "../../bower_components/font-awesome/scss/rotated-flipped";
+@import "../../bower_components/font-awesome/scss/stacked";
+@import "../../bower_components/font-awesome/scss/icons";
+
+
+
 
 @import "../src/main";
 @import "../src/footer";
@@ -29,6 +44,7 @@
 @import "../src/header";
 @import "../src/login";
 @import "../src/radio-button-group";
+@import "../src/sidebar-menu";
 @import "../src/typography";
 /*@import "../src/boxes";
 @import "../src/buttons";

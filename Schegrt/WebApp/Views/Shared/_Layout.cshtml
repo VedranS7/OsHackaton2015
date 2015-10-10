@@ -12,44 +12,30 @@
 </head>
 <body ng-app="app.global" ng-cloak>
     <header class="navbar navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <div id="logo">
-                    <a href="/" class="navbar-brand">Schegrt</a>
-                </div>
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <div class="navbar-collapse collapse">
-                    <div ng-controller="AuthController">
-                        @Html.Partial("_LoginPartial")
-                    </div>
-
-                    <ul class="nav navbar-nav navbar-left">
-                        <li><a href="#">Find apprentices</a></li>
-                        <li><a href="#">Find companies</a></li>
-                        <li>@Html.ActionLink("About", "About", "")</li>
-                        <li><a href="/Home/Contact">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">Schegrt</a>
+            
         </div>
+        <div id="main-nav" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="#">Find apprentices</a></li>
+                <li><a href="#">Find companies</a></li>
+                <li>@Html.ActionLink("About", "About", "")</li>
+                <li><a href="/Home/Contact">Contact</a></li>
+            </ul>
+            <div class="nav navbar-nav navbar-right" ng-controller="AuthController">Html.Partial("_LoginPartial")</div>
+        </div>           
     </header>
 
-    <main class="container body-content">
+    <main>
         @RenderBody()
-        <hr />
-
     </main>
-    <footer>
-        <div class="container">
-            <p>&copy; @DateTime.Now.Year - Batman's friends</p>
-        </div>
-    </footer>
-
-    
+   
     
 </body>
 </html>
