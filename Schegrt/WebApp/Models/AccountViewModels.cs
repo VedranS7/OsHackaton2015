@@ -81,7 +81,7 @@ namespace WebApp.Models
         public string ConfirmPassword { get; set; }
         
         [Display(Name ="Tak svejedno")]
-        [Range(0,1)]
+        [Range(1,2)]
         public int Type { get; set; }
     }
 
