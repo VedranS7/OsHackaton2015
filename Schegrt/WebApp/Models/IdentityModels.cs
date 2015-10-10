@@ -14,6 +14,8 @@ namespace WebApp.Models
     {
         public int? Type { get; set; }
 
+        public virtual GeneralUser GeneralUser { get; set; }
+
         public virtual IList<UserFOI> Interests { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
@@ -29,6 +31,12 @@ namespace WebApp.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+
+        public DbSet<GeneralUser> GeneralUsers { get; set; }
+        public DbSet<FieldOfInterest> Fields { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<UserFOI> UserFOIs { get; set; }
+        public DbSet<Project> Projects { get; set; }
 
         public static ApplicationDbContext Create()
         {

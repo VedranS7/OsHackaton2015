@@ -33,7 +33,7 @@ namespace WebApp.Models
 
         public override String GetName()
         {
-            return Name + "," + Surname;
+            return Surname + "," + Name;
         }
     }
 

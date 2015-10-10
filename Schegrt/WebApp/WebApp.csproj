@@ -209,6 +209,7 @@
     <Compile Include="Models\Field\ViewModels\InterestViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Matchers\ProjectMatcher.cs" />
     <Compile Include="Models\Matchers\ProviderMatcher.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
