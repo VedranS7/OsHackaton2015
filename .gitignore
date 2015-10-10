@@ -22,3 +22,5 @@ Schegrt/WebApp/bin/*
 Schegrt/WebApp/obj/*
 
 /Schegrt/.vs/Schegrt/v14/.suo
+/Schegrt/.vs/config/*
+/Schegrt/.vs/*
