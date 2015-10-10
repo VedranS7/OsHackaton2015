@@ -1,7 +1,21 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
 body {
 	margin: 0;
 }
 
 main {
 	margin-top: 90px;
+}
+
+.overlay {
+	background: rgba(0, 0, 0, 0.2);
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	position: fixed;
+	top: 0;
+	left: 0;
 }

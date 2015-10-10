@@ -5,18 +5,16 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using WebApp.Models.Field;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace WebApp.Models
 {
     public class ApplicationUser : IdentityUser
     {
-        public String Location { get; set; }
-        public String Name { get; set; }
-        public String Surname { get; set; }
-        public String CompanyName { get; set; }
-        public String Description { get; set; }
-        public String URL { get; set; }
-        public int Type { get; set; }
+        public int? Type { get; set; }
+
+        public virtual IList<UserFOI> Interests { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

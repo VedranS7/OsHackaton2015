@@ -3,7 +3,7 @@
     ViewBag.Title = "Register";
 }
 
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form", @ng_controller = "AuthController" }))
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form", @ng_controller = "AuthController", @name = "register" }))
 {
     @Html.AntiForgeryToken()
     <h4>Join as an apprentice or internship provider</h4>
@@ -12,33 +12,37 @@
     <div class="form-group">
         @Html.LabelFor(m => m.Email, new { @class = "col-md-4 control-label" })
         <div class="col-md-8">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", type = "email" })
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @type = "email", @ng_model = "email", @ng_class = "{error: register.$error.email}" })
         </div>
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Password, new { @class = "col-md-4 control-label" })
         <div class="col-md-8">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control", @ng_model = "password" })
         </div>
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-4 control-label" })
         <div class="col-md-8">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", @ng_model = "passwordConfirm", @ng_class = "{error: password !== passwordConfirm}" })
+            <p class="error" ng-show="password !== passwordConfirm">Passwords don't match!</p>
         </div>
     </div>
     <div class="form-group">
         <label class="col-md-4">Register as student or job provider</label>
         <div class="col-md-8">
             <div class="radio-button-group btn-group" role="group">
-                <label class="btn btn-default" ng-click="authTypeClick($event)"><input type="radio" name="Type" value="1" />Student</label>
-                <label class="btn btn-default" ng-click="authTypeClick($event)"><input type="radio" name="Type" value="2" />Provider</label>
+                <label class="btn btn-default" ng-click="authTypeClick($event)"><input type="radio" name="Type" value="1" ng-model="userGroup" />Student</label>
+                <label class="btn btn-default" ng-click="authTypeClick($event)"><input type="radio" name="Type" value="2" ng-model="userGroup" />Provider</label>
             </div>
-        </div> 
+        </div>
     </div>
-    <div class="form-group">        
+    <div class="form-group">
+        <p class="required col-md-offset-4 col-md-8">* All fields are required!</p>
+    </div>
+    <div class="form-group">
         <div class="col-md-offset-4 col-md-8">
-            <input type="submit" class="btn btn-default" value="Register" />
+            <input type="submit" class="btn btn-default" value="Register" ng-disabled="isFormInvalid" />
         </div>
     </div>
 }

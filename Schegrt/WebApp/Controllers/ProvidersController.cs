@@ -10,108 +10,107 @@ using WebApp.Models;
 
 namespace WebApp.Controllers
 {
-    public class GeneralUsersController : Controller
+    public class ProvidersController : Controller
     {
         private DatabaseContext db = new DatabaseContext();
 
-        // GET: GeneralUsers
+        // GET: Providers
         public ActionResult Index()
         {
-            return View(db.Users.ToList());
+            return View(db.Users.OfType<ProviderUser>().ToList());
         }
 
-        // GET: GeneralUsers/Details/5
-        public ActionResult Details(Guid? id)
+        // GET: Providers/Details/5
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            GeneralUser generalUser = db.Users.Find(id);
-            if (generalUser == null)
+            ProviderUser providerUser = db.Users.Find(id) as ProviderUser;
+            if (providerUser == null)
             {
                 return HttpNotFound();
             }
-            return View(generalUser);
+            return View(providerUser);
         }
 
-        // GET: GeneralUsers/Create
+        // GET: Providers/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: GeneralUsers/Create
+        // POST: Providers/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Email,Location")] StudentUser generalUser)
+        public ActionResult Create([Bind(Include = "Id,Email,Location,CompanyName,Description,URL")] ProviderUser providerUser)
         {
             if (ModelState.IsValid)
             {
-                generalUser.Id = Guid.NewGuid().ToString();
-                db.Users.Add(generalUser);
+                db.Users.Add(providerUser);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(generalUser);
+            return View(providerUser);
         }
 
-        // GET: GeneralUsers/Edit/5
-        public ActionResult Edit(Guid? id)
+        // GET: Providers/Edit/5
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            GeneralUser generalUser = db.Users.Find(id);
-            if (generalUser == null)
+            ProviderUser providerUser = db.Users.Find(id) as ProviderUser;
+            if (providerUser == null)
             {
                 return HttpNotFound();
             }
-            return View(generalUser);
+            return View(providerUser);
         }
 
-        // POST: GeneralUsers/Edit/5
+        // POST: Providers/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Email,Location")] GeneralUser generalUser)
+        public ActionResult Edit([Bind(Include = "Id,Email,Location,CompanyName,Description,URL")] ProviderUser providerUser)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(generalUser).State = EntityState.Modified;
+                db.Entry(providerUser).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(generalUser);
+            return View(providerUser);
         }
 
-        // GET: GeneralUsers/Delete/5
-        public ActionResult Delete(Guid? id)
+        // GET: Providers/Delete/5
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            GeneralUser generalUser = db.Users.Find(id);
-            if (generalUser == null)
+            ProviderUser providerUser = db.Users.Find(id) as ProviderUser;
+            if (providerUser == null)
             {
                 return HttpNotFound();
             }
-            return View(generalUser);
+            return View(providerUser);
         }
 
-        // POST: GeneralUsers/Delete/5
+        // POST: Providers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(Guid id)
+        public ActionResult DeleteConfirmed(int id)
         {
-            GeneralUser generalUser = db.Users.Find(id);
-            db.Users.Remove(generalUser);
+            ProviderUser providerUser = db.Users.Find(id) as ProviderUser;
+            db.Users.Remove(providerUser);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

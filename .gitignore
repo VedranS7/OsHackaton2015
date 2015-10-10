@@ -17,10 +17,11 @@ Schegrt/WebApp/node_modules/*
 Schegrt/WebApp/bower_components/*
 Schegrt/WebApp/aspnet_client/*
 *.log
-Schegrt/WebApp.idea/*
-Schegrt/WebApp/bin/*
-Schegrt/WebApp/obj/*
-
+Schegrt/WebApp/.idea/*
+[Bb]in
+[Oo]bj
+[Bb]in/*
+[Oo]bj/*
 /Schegrt/.vs/Schegrt/v14/.suo
 /Schegrt/.vs/config/*
 /Schegrt/.vs/*
