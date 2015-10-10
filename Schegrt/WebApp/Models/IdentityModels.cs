@@ -13,8 +13,6 @@ namespace WebApp.Models
     public class ApplicationUser : IdentityUser
     {
         public int? Type { get; set; }
-        
-        public int GeneralUserId { get; set; }
 
         public virtual IList<UserFOI> Interests { get; set; }
 
@@ -36,9 +34,5 @@ namespace WebApp.Models
         {
             return new ApplicationDbContext();
         }
-        
-        public DbSet<GeneralUser> GeneralUsers { get; set; }
-        public DbSet<FieldOfInterest> Fields { get; set; }
-        public DbSet<Category> Categories { get; set; }
     }
 }
