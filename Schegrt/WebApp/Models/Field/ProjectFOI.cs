@@ -8,7 +8,7 @@ namespace WebApp.Models.Field
 	public class ProjectFOI
 	{
 		public int Id { get; set; }
-		public virtual ProjectFOI User { get; set; }
+		public virtual Project Project { get; set; }
 		public virtual FieldOfInterest Foi { get; set; }
 		public int Level { get; set; }
 	}

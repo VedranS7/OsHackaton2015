@@ -179,10 +179,11 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers API\FOIsController.cs" />
     <Compile Include="Controllers API\InterestsController.cs" />
+    <Compile Include="Controllers API\ProjectFOIsController.cs" />
+    <Compile Include="Controllers API\ProjectsController.cs" />
     <Compile Include="Controllers API\ProvidersController.cs" />
     <Compile Include="Controllers API\RecommendationsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\FieldsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -208,6 +209,7 @@
     <Compile Include="Models\Field\UserFOI.cs" />
     <Compile Include="Models\Field\ViewModels\FieldOfInterestViewModel.cs" />
     <Compile Include="Models\Field\ViewModels\InterestViewModel.cs" />
+    <Compile Include="Models\Field\ViewModels\ProjInterestViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Matchers\ProjectMatcher.cs" />
@@ -218,7 +220,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="css\dist\*" />
     <Content Include="css\fonts\*" />
@@ -277,21 +278,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-    <Content Include="Views\MatchMakingTest\Create.cshtml" />
-    <Content Include="Views\MatchMakingTest\Delete.cshtml" />
-    <Content Include="Views\MatchMakingTest\Details.cshtml" />
-    <Content Include="Views\MatchMakingTest\Edit.cshtml" />
-    <Content Include="Views\MatchMakingTest\Index.cshtml" />
-    <Content Include="Views\Projects\Create.cshtml" />
-    <Content Include="Views\Projects\Delete.cshtml" />
-    <Content Include="Views\Projects\Details.cshtml" />
-    <Content Include="Views\Projects\Edit.cshtml" />
-    <Content Include="Views\Projects\Index.cshtml" />
     <Content Include="Views\Providers\Create.cshtml" />
     <Content Include="Views\Providers\Delete.cshtml" />
     <Content Include="Views\Providers\Details.cshtml" />
@@ -302,13 +290,27 @@
     <Content Include="Views\Interests\Details.cshtml" />
     <Content Include="Views\Interests\Edit.cshtml" />
     <Content Include="Views\Interests\Index.cshtml" />
-    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Projects\Create.cshtml" />
+    <Content Include="Views\Projects\Delete.cshtml" />
+    <Content Include="Views\Projects\Details.cshtml" />
+    <Content Include="Views\Projects\Edit.cshtml" />
+    <Content Include="Views\Projects\Index.cshtml" />
+    <Content Include="Views\MatchMakingTest\Create.cshtml" />
+    <Content Include="Views\MatchMakingTest\Delete.cshtml" />
+    <Content Include="Views\MatchMakingTest\Details.cshtml" />
+    <Content Include="Views\MatchMakingTest\Edit.cshtml" />
+    <Content Include="Views\MatchMakingTest\Index.cshtml" />
     <Content Include="Views\Student\Create.cshtml" />
     <Content Include="Views\Student\Delete.cshtml" />
     <Content Include="Views\Student\Details.cshtml" />
     <Content Include="Views\Student\Edit.cshtml" />
     <Content Include="Views\Student\Index.cshtml" />
     <Content Include="Views\UserHome\Index.cshtml" />
+    <Content Include="Views\ProjectFOIs\Create.cshtml" />
+    <Content Include="Views\ProjectFOIs\Delete.cshtml" />
+    <Content Include="Views\ProjectFOIs\Details.cshtml" />
+    <Content Include="Views\ProjectFOIs\Edit.cshtml" />
+    <Content Include="Views\ProjectFOIs\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
