@@ -185,6 +185,8 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\DatabaseContext.cs" />
+    <Compile Include="Models\Field\FieldOfInterest.cs" />
+    <Compile Include="Models\Field\SkillLevel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
