@@ -16,5 +16,7 @@ namespace WebApp.Models
 		public DbSet<Category> Categories {	get; set; }
         public DbSet<UserFOI> UserFOIs { get; set; }
 		public DbSet<Project> Projects { get; set; }
+
+		public System.Data.Entity.DbSet<WebApp.Models.Field.ProjectFOI> ProjectFOIs { get; set; }
 	}
 }
