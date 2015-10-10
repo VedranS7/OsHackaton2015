@@ -1,43 +1,22 @@
-﻿@model WebApp.Models.ProviderUser
-
-
-<div ng-controller="UserController">
-    <h4>My updates</h4>
-    <hr />
-
-    <div class="col-md-3">
-
-        <table>
-            <tr>
-                <td>@Html.DisplayNameFor(model => model.CompanyName)</td>
-                <td>@Html.DisplayFor(model => model.CompanyName)</td>
-            </tr>
-            <tr>
-                <td>@Html.DisplayNameFor(model => model.Location)</td>
-                <td>@Html.DisplayFor(model => model.Location)</td>
-            </tr>
-            <tr>
-                <td>@Html.DisplayNameFor(model => model.URL)</td>
-                <td>@Html.DisplayFor(model => model.URL)</td>
-            </tr>
-            <tr>
-                <td>@Html.DisplayNameFor(model => model.Email)</td>
-                <td>@Html.DisplayFor(model => model.Email)</td>
-            </tr>            
-            <tr>
-                <td>@Html.DisplayNameFor(model => model.Description)</td>
-                <td>@Html.DisplayFor(model => model.Description)</td>
-            </tr>           
-        </table>       
+﻿<aside id="sidebar-menu" class="" ng-controller="UserController">
+    <div class="sidebar-block">
+        <div class="profile">
+            <h4>{{company.CompanyName}}</h4>
+        </div>
     </div>
-
-    <div class="col-md-9">
-
+    <div class="category">About</div>
+    <div class="sidebar-block">
+        <ul class="list-about">
+            <li><i class="fa fa-map-marker"></i>{{company.Location}}</li>
+            <li><i class="fa fa-link"></i> <a href="#">{{company.URL}}</a></li>
+            <li><i class="fa fa-email"></i> <a href="#">{{company.Email}}</a></li>
+        </ul>
     </div>
-
-
-
-
-</div>
+    <div class="category">Info</div>
+    <div class="sidebar-block">
+        <p>{{company.Description}}</p>
+    </div>
+    <div class="category">Skill set</div>
+</aside>
 
 <script src="~/js/dist/user.min.js" type="text/javascript"></script>
