@@ -183,6 +183,7 @@
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\FieldsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InterestsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Controllers\ProvidersController.cs" />
@@ -272,11 +273,11 @@
     <Content Include="Views\Providers\Details.cshtml" />
     <Content Include="Views\Providers\Edit.cshtml" />
     <Content Include="Views\Providers\Index.cshtml" />
-    <Content Include="Views\Student\Create.cshtml" />
-    <Content Include="Views\Student\Delete.cshtml" />
-    <Content Include="Views\Student\Details.cshtml" />
-    <Content Include="Views\Student\Edit.cshtml" />
-    <Content Include="Views\Student\Index.cshtml" />
+    <Content Include="Views\Interests\Create.cshtml" />
+    <Content Include="Views\Interests\Delete.cshtml" />
+    <Content Include="Views\Interests\Details.cshtml" />
+    <Content Include="Views\Interests\Edit.cshtml" />
+    <Content Include="Views\Interests\Index.cshtml" />
     <Content Include="Views\Projects\Create.cshtml" />
     <Content Include="Views\Projects\Delete.cshtml" />
     <Content Include="Views\Projects\Details.cshtml" />
