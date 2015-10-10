@@ -11,3 +11,7 @@ packages/*
 *.suo
 *.psess
 *.vsp
+
+Schegrt/packages/*
+Schegrt/WebApp/bin/*
+Schegrt/WebApp/obj/*
