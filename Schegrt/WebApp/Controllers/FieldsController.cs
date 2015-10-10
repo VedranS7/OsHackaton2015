@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using WebApp.Models;
 using WebApp.Models.Field;
+using WebApp.Models.Field.ViewModels;
 
 namespace WebApp.Controllers
 {
@@ -39,6 +40,7 @@ namespace WebApp.Controllers
         // GET: Fields/Create
         public ActionResult Create()
         {
+			ViewBag.Categories = db.Categories.Select(x=> new SelectListItem {Value = x.Id.ToString(), Text = x.Name}).ToList();
             return View();
         }
 
@@ -47,11 +49,13 @@ namespace WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name")] FieldOfInterest fieldOfInterest)
+        public ActionResult Create([Bind(Include = "Id,Name,CategoryId")] FieldOfInterestViewModel fieldOfInterest)
         {
+			FieldOfInterest foi = new FieldOfInterest { Name = fieldOfInterest.Name, Category = db.Categories.Where(x => x.Id == fieldOfInterest.CategoryId).FirstOrDefault() };
+
             if (ModelState.IsValid)
             {
-                db.Fields.Add(fieldOfInterest);
+                db.Fields.Add(foi);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
