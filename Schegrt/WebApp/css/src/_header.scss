@@ -1,11 +1,21 @@
 header {
 	background: #2E3138;
-	height: 86px;
+	height: 74px;
 	padding: 18px;
 
 	#logo {
 		.navbar-brand {
 			font-size: 3rem,
+		}
+	}
+}
+
+.nav {
+	> li {
+		margin-right: 12px;
+
+		&:last-child {
+			margin-right: 0;
 		}
 	}
 }
