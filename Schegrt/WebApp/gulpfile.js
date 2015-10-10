@@ -26,19 +26,19 @@ var mapStream 	= require('map-stream'),
 var paths = {
 	sources: {
 		scripts: 	[
-						'js/source/src/**/*.js'
+						'js/src/**/*.js'
 					],
-		styles: 	['css/source/src/**/*.scss'],
+		styles: 	['css/src/**/*.scss'],
 		fonts: 		['css/fonts/*'],
 		images: 	['img/*']
 	},
 
-	scriptsLib: 	['js/source/lib/**/*.js'],
+	scriptsLib: 	['js/inc/lib.js'],
 	scripts: 		[
-						'js/source/inc/**/*.js'
+						'js/inc/**/*.js'
 					],
-	stylesLib: 		['css/source/lib/**/*.scss'],
-	styles: 		['css/source/inc/*.scss'],
+	stylesLib: 		['css/lib/**/*.scss'],
+	styles: 		['css/inc/*.scss'],
 
 	compile: {
 		scriptsLib: 	'js/dist',
