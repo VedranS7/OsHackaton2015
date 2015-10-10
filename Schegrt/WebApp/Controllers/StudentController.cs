@@ -25,7 +25,7 @@ namespace WebApp.Controllers
 			//	studentUserList.Add(user as StudentUser);
 			//}
 			//return View(studentUserList);
-		}
+}
 
         // GET: Student/Details/5
         public ActionResult Details(string id)

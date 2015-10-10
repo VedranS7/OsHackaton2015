@@ -8,6 +8,7 @@ namespace WebApp.Models.Field
 	public class Project
 	{
 		public int Id { get; set; }
+		public string Name { get; set; }
 		public virtual GeneralUser User { get; set; }
 		public List<FieldOfInterest> FoiList { get; set; }
 		public DateTime StartDate { get; set; }
