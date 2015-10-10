@@ -5,9 +5,9 @@ using System.Web;
 
 namespace WebApp.Models.Field
 {
-	public class SkillLevel
-	{
-		public string ResourceKey { get; set; }
-		public int Id { get; set; }
-	}
+    public class Category
+    {
+        public int Id { get; set; }
+        public String Name { get; set; }
+    }
 }

@@ -6,15 +6,11 @@ using System.Web;
 namespace WebApp.Models.Field
 {
 
-	public class FieldOfInterest
-	{
-		public string name
-		{
-			get; set;
-		}
-		public SkillLevel skill
-		{
-			get; set;
-		}
-	}
+    public class FieldOfInterest
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int Skills { get; set; }
+        public Category Category { get; set; }
+    }
 }

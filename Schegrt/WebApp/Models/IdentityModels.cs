@@ -30,17 +30,6 @@ namespace WebApp.Models
         {
         }
 
-        public DbSet<StudentUser> Students { get; set; }
-        public DbSet<ProviderUser> Providers { get; set; }
-        public DbSet<SkillLevel> SkillLevels { get; set; }
-        public DbSet<FieldOfInterest> Fields { get; set; }
-
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<StudentUser>().ToTable("AspNetUsers");
-            modelBuilder.Entity<ProviderUser>().ToTable("AspNetUsers");
-        }
-
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
