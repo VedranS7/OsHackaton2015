@@ -261,6 +261,11 @@
     <Content Include="Views\Fields\Details.cshtml" />
     <Content Include="Views\Fields\Edit.cshtml" />
     <Content Include="Views\Fields\Index.cshtml" />
+    <Content Include="Views\GeneralUsers\Create.cshtml" />
+    <Content Include="Views\GeneralUsers\Delete.cshtml" />
+    <Content Include="Views\GeneralUsers\Details.cshtml" />
+    <Content Include="Views\GeneralUsers\Edit.cshtml" />
+    <Content Include="Views\GeneralUsers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
