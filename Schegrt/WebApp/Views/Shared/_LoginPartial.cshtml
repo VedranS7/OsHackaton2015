@@ -23,4 +23,5 @@ else
     <div class="login-form" ng-show="showLoginForm">
         @Html.Partial("/Views/Account/Login.cshtml")
     </div>
+    <div class="overlay" ng-show="showLoginForm" ng-click="loginClick()"></div>
 }
