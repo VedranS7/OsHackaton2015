@@ -198,8 +198,10 @@
     <Compile Include="Models\Field\Project.cs" />
     <Compile Include="Models\Field\UserFOI.cs" />
     <Compile Include="Models\Field\ViewModels\FieldOfInterestViewModel.cs" />
+    <Compile Include="Models\Field\ViewModels\InterestViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Matchers\ProviderMatcher.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />

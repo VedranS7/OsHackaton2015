@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using WebApp.Models;
 using WebApp.Models.Field;
+using WebApp.Models.Field.ViewModels;
 
 namespace WebApp.Controllers
 {
@@ -16,9 +17,9 @@ namespace WebApp.Controllers
         private DatabaseContext db = new DatabaseContext();
 
         // GET: Interests
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
-            GeneralUser user = db.Users.FirstOrDefault(u => u.Email == User.Identity.Name);
+            GeneralUser user = db.Users.Include(i => i.Interests).FirstOrDefault(u => u.Id == id);
             IList<UserFOI> result = user != null ? user.Interests : new List<UserFOI>();
             return View(result);
         }
@@ -26,6 +27,7 @@ namespace WebApp.Controllers
         // GET: Interests/Create
         public ActionResult Create()
         {
+            ViewBag.FieldsOfInterests = db.Fields.Select(x => new SelectListItem { Value = x.Id.ToString(), Text = x.Name }).ToList();
             return View();
         }
 
@@ -34,16 +36,24 @@ namespace WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Level")] UserFOI userFOI)
+        public ActionResult Create(InterestViewModel interest)
         {
             if (ModelState.IsValid)
             {
+                GeneralUser user = db.Users.FirstOrDefault(u => u.Id == interest.UserId);
+                FieldOfInterest foi = db.Fields.FirstOrDefault(f => f.Id == interest.FOIId);
+                UserFOI userFOI = new UserFOI()
+                {
+                    User = user,
+                    Foi = foi,
+                    Level = interest.Level
+                };
                 db.UserFOIs.Add(userFOI);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(userFOI);
+            return View(interest);
         }
 
         // GET: Interests/Delete/5
