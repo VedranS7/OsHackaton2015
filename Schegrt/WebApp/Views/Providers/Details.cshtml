@@ -1,56 +1,43 @@
 ﻿@model WebApp.Models.ProviderUser
 
 
-@{
-    Layout = null;
-}
+<div ng-controller="UserController">
+    <h4>My updates</h4>
+    <hr />
 
-        <h4>ProviderUser</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Email)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Email)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Location)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Location)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.CompanyName)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.CompanyName)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Description)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Description)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.URL)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.URL)
-            </dd>
-    
-        </dl>
+    <div class="col-md-3">
+
+        <table>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.CompanyName)</td>
+                <td>@Html.DisplayFor(model => model.CompanyName)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Location)</td>
+                <td>@Html.DisplayFor(model => model.Location)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.URL)</td>
+                <td>@Html.DisplayFor(model => model.URL)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Email)</td>
+                <td>@Html.DisplayFor(model => model.Email)</td>
+            </tr>            
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Description)</td>
+                <td>@Html.DisplayFor(model => model.Description)</td>
+            </tr>           
+        </table>       
     </div>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
+
+    <div class="col-md-9">
+
+    </div>
+
+
+
+
+</div>
+
+<script src="~/js/dist/user.min.js" type="text/javascript"></script>
