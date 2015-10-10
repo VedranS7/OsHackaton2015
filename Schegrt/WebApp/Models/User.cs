@@ -15,6 +15,8 @@ namespace WebApp.Models
         public String Email { get; set; }
         public String Location { get; set; }
 
+        public abstract String GetName();
+
         public virtual IList<UserFOI> Interests { get; set; }
     }
 
@@ -28,6 +30,11 @@ namespace WebApp.Models
     {
         public String Name { get; set; }
         public String Surname { get; set; }
+
+        public override String GetName()
+        {
+            return Name + "," + Surname;
+        }
     }
 
     public class ProviderUser : GeneralUser
@@ -36,5 +43,10 @@ namespace WebApp.Models
         public String CompanyName { get; set; }
         public String Description { get; set; }
         public String URL { get; set; }
+
+        public override String GetName()
+        {
+            return CompanyName;
+        }
     }
 }
