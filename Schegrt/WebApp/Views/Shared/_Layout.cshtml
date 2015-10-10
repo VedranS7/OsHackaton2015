@@ -21,11 +21,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <div class="navbar-collapse collapse">
+                <div class="navbar-collapse collapse pull-right">
                     <ul class="nav navbar-nav">
-                        <li>about</li>
+                        <li><a href="/Home/About">About</a></li>
+                        <li><a href="/Home/Contact">Contact</a></li>
                     </ul>
-                    <div ng-controller="AuthController">
+                    <div ng-controller="AuthController" class="pull-right">
                         @Html.Partial("_LoginPartial")
                     </div>
                     
