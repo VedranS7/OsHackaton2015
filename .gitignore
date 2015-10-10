@@ -1,5 +1,3 @@
-bin/*
-obj/*
 *.BASE
 *.LOCAL
 *.REMOTE
