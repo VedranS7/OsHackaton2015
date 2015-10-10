@@ -17,6 +17,6 @@ namespace WebApp.Models
         public int Type { get; set; }
         public DatabaseContext() : base("DefaultConnection") { }
 
-		public System.Data.Entity.DbSet<WebApp.Models.Field.Project> Projects { get; set; }
+		public DbSet<Project> Projects { get; set; }
 	}
 }
