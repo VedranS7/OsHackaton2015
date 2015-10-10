@@ -9,6 +9,7 @@ namespace WebApp.Models
 {
     public class DatabaseContext : DbContext
     {
+        public DbSet<SkillLevel> SkillLevels { get; set; }
         public DbSet<FieldOfInterest> Fields { get; set; }
         public DatabaseContext() : base("DefaultConnection") { }
     }
