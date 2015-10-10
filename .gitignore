@@ -1,0 +1,13 @@
+bin/*
+obj/*
+*.BASE
+*.LOCAL
+*.REMOTE
+*.BACKUP.*
+*.BASE.*
+*.LOCAL.*
+*.REMOTE.*
+packages/*
+*.suo
+*.psess
+*.vsp
