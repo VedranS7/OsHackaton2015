@@ -72,3 +72,4 @@ C:\Users\sikic\OneDrive\Documents\GitHub\OsHackaton2015\Schegrt\WebApp\bin\Micro
 C:\Users\sikic\OneDrive\Documents\GitHub\OsHackaton2015\Schegrt\WebApp\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\sikic\OneDrive\Documents\GitHub\OsHackaton2015\Schegrt\WebApp\obj\Debug\WebApp.dll
 C:\Users\sikic\OneDrive\Documents\GitHub\OsHackaton2015\Schegrt\WebApp\obj\Debug\WebApp.pdb
+C:\Users\sikic\OneDrive\Documents\GitHub\OsHackaton2015\Schegrt\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
