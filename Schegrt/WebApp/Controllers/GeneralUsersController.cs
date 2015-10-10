@@ -46,11 +46,11 @@ namespace WebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Email,Location")] GeneralUser generalUser)
+        public ActionResult Create([Bind(Include = "Id,Email,Location")] StudentUser generalUser)
         {
             if (ModelState.IsValid)
             {
-                generalUser.Id = Guid.NewGuid();
+                generalUser.Id = Guid.NewGuid().ToString();
                 db.Users.Add(generalUser);
                 db.SaveChanges();
                 return RedirectToAction("Index");
