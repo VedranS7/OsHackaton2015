@@ -26,7 +26,8 @@ namespace WebApp.Controllers_API
         // GET: api/foi
         public IQueryable<FoiDto> GetFields()
         {
-            return db.Fields.Select(f => new FoiDto() { Id = f.Id, Name = f.Name });
+            IQueryable<FoiDto> result = db.Fields.Select(f => new FoiDto() { Id = f.Id, Name = f.Name });
+            return result;
         }
     }
 }

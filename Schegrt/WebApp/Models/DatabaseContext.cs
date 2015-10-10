@@ -21,5 +21,7 @@ namespace WebApp.Models
             modelBuilder.Entity<StudentUser>().Map<StudentUser>(s => { s.ToTable("AspNetUsers"); s.Requires("Type").HasValue((int)UserType.Student); });
             modelBuilder.Entity<ProviderUser>().Map<ProviderUser>(s => { s.ToTable("AspNetUsers"); s.Requires("Type").HasValue((int)UserType.Provider); });
         }
+
+        public System.Data.Entity.DbSet<WebApp.Models.Field.UserFOI> UserFOIs { get; set; }
     }
 }

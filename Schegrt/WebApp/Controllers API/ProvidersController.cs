@@ -44,7 +44,7 @@ namespace WebApp.Controllers_API
             base.Dispose(disposing);
         }
 
-        private bool ProviderUserExists(string id)
+        private bool ProviderUserExists(int id)
         {
             return db.Users.Count(e => e.Id == id) > 0;
         }

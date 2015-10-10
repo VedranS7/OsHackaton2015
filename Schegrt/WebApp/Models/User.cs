@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 using WebApp.Models.Field;
@@ -10,7 +11,7 @@ namespace WebApp.Models
 {
     public abstract class GeneralUser
     {
-        public String Id { get; set; }
+        public int Id { get; set; }
         public String Email { get; set; }
         public String Location { get; set; }
 
