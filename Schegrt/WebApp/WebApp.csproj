@@ -186,7 +186,6 @@
     <Compile Include="Controllers\InterestsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProvidersController.cs" />
-    <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -271,19 +270,11 @@
     <Content Include="Views\Providers\Details.cshtml" />
     <Content Include="Views\Providers\Edit.cshtml" />
     <Content Include="Views\Providers\Index.cshtml" />
-<<<<<<< HEAD
     <Content Include="Views\Interests\Create.cshtml" />
     <Content Include="Views\Interests\Delete.cshtml" />
     <Content Include="Views\Interests\Details.cshtml" />
     <Content Include="Views\Interests\Edit.cshtml" />
     <Content Include="Views\Interests\Index.cshtml" />
-=======
-    <Content Include="Views\Student\Create.cshtml" />
-    <Content Include="Views\Student\Delete.cshtml" />
-    <Content Include="Views\Student\Details.cshtml" />
-    <Content Include="Views\Student\Edit.cshtml" />
-    <Content Include="Views\Student\Index.cshtml" />
->>>>>>> 3e2f5434ef70a42b6cf639bbda15411b41eee485
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
