@@ -10,7 +10,6 @@ namespace WebApp.Models.Field
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int Skills { get; set; }
         public Category Category { get; set; }
     }
 }

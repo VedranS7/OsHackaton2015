@@ -11,6 +11,7 @@ namespace WebApp.Models
     {
         public DbSet<GeneralUser> Users { get; set; }
         public DbSet<FieldOfInterest> Fields { get; set; }
+		public DbSet<Category> Categories {	get; set; }
         public int Type { get; set; }
         public DatabaseContext() : base("DefaultConnection") { }
 
