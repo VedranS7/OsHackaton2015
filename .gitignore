@@ -6,7 +6,7 @@
 *.LOCAL.*
 *.REMOTE.*
 packages/*
-*.suo
+.suo
 *.psess
 *.vsp
 
@@ -20,3 +20,5 @@ Schegrt/WebApp/aspnet_client/*
 Schegrt/WebApp.idea/*
 Schegrt/WebApp/bin/*
 Schegrt/WebApp/obj/*
+
+/Schegrt/.vs/Schegrt/v14/.suo
