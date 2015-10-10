@@ -7,117 +7,111 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WebApp.Models;
+using WebApp.Models.Field;
 
 namespace WebApp.Controllers
 {
-    public class StudentController : Controller
+    public class ProjectsController : Controller
     {
         private DatabaseContext db = new DatabaseContext();
 
-        // GET: Student
+        // GET: Projects
         public ActionResult Index()
         {
-			return View(db.Users.OfType<StudentUser>().ToList());
-			//st<StudentUser> studentUserList = new List<StudentUser>();
-			//var dbUsers = db.Users.ToList();
-			//foreach (GeneralUser user in dbUsers)
-			//{
-			//	studentUserList.Add(user as StudentUser);
-			//}
-			//return View(studentUserList);
-		}
+            return View(db.Projects.ToList());
+        }
 
-        // GET: Student/Details/5
-        public ActionResult Details(string id)
+        // GET: Projects/Details/5
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            StudentUser studentUser = db.Users.Find(id) as StudentUser;
-			if (studentUser == null)
+            Project project = db.Projects.Find(id);
+            if (project == null)
             {
                 return HttpNotFound();
             }
-            return View(studentUser);
+            return View(project);
         }
 
-        // GET: Student/Create
+        // GET: Projects/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Student/Create
+        // POST: Projects/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Email,Location,Name,Surname")] StudentUser studentUser)
+        public ActionResult Create([Bind(Include = "Id,StartDate,EndDate")] Project project)
         {
             if (ModelState.IsValid)
             {
-                db.Users.Add(studentUser);
+                db.Projects.Add(project);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(studentUser);
+            return View(project);
         }
 
-        // GET: Student/Edit/5
-        public ActionResult Edit(string id)
+        // GET: Projects/Edit/5
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            StudentUser studentUser = db.Users.Find(id) as StudentUser;
-			if (studentUser == null)
+            Project project = db.Projects.Find(id);
+            if (project == null)
             {
                 return HttpNotFound();
             }
-            return View(studentUser);
+            return View(project);
         }
 
-        // POST: Student/Edit/5
+        // POST: Projects/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Email,Location,Name,Surname")] StudentUser studentUser)
+        public ActionResult Edit([Bind(Include = "Id,StartDate,EndDate")] Project project)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(studentUser).State = EntityState.Modified;
+                db.Entry(project).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(studentUser);
+            return View(project);
         }
 
-        // GET: Student/Delete/5
-        public ActionResult Delete(string id)
+        // GET: Projects/Delete/5
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            StudentUser studentUser = db.Users.Find(id) as StudentUser;
-			if (studentUser == null)
+            Project project = db.Projects.Find(id);
+            if (project == null)
             {
                 return HttpNotFound();
             }
-            return View(studentUser);
+            return View(project);
         }
 
-        // POST: Student/Delete/5
+        // POST: Projects/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(int id)
         {
-            StudentUser studentUser = db.Users.Find(id) as StudentUser;
-			db.Users.Remove(studentUser);
+            Project project = db.Projects.Find(id);
+            db.Projects.Remove(project);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
