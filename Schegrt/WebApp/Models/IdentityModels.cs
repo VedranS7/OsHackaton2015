@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using WebApp.Models.Field;
 
 namespace WebApp.Models
 {
@@ -27,6 +28,17 @@ namespace WebApp.Models
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+        }
+
+        public DbSet<StudentUser> Students { get; set; }
+        public DbSet<ProviderUser> Providers { get; set; }
+        public DbSet<SkillLevel> SkillLevels { get; set; }
+        public DbSet<FieldOfInterest> Fields { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<StudentUser>().ToTable("AspNetUsers");
+            modelBuilder.Entity<ProviderUser>().ToTable("AspNetUsers");
         }
 
         public static ApplicationDbContext Create()
