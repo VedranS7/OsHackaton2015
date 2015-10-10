@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WebApp.Models.Field.SkillLevel>
+﻿@model IEnumerable<WebApp.Models.Field.FieldOfInterest>
 
 @{
     Layout = null;
@@ -18,7 +18,7 @@
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.ResourceKey)
+                @Html.DisplayNameFor(model => model.Name)
             </th>
             <th></th>
         </tr>
@@ -26,7 +26,7 @@
     @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.ResourceKey)
+                @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

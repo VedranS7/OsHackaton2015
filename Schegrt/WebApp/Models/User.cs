@@ -13,6 +13,7 @@ namespace WebApp.Models
         public String Email { get; set; }
         public String Location { get; set; }
         public int Type = 0;
+		public List<UserFOI> interestList { get; set; }
     }
 
     public class StudentUser : GeneralUser
@@ -20,8 +21,6 @@ namespace WebApp.Models
         public String Name { get; set; }
         public String Surname { get; set; }
         public new int Type = 1;
-
-        public virtual IList<FieldOfInterest> Interests { get; set; }
     }
 
     public class ProviderUser : GeneralUser
@@ -30,7 +29,5 @@ namespace WebApp.Models
         public String Description { get; set; }
         public String URL { get; set; }
         public new int Type = 2;
-
-        public virtual IList<FieldOfInterest> Fields { get; set; }
     }
 }
