@@ -1,0 +1,30 @@
+header {
+	background: #2E3138;
+	height: 86px;
+	padding: 18px;
+}
+
+.navbar-header {
+	width: 100%;
+
+	a {
+		color: $navbar-default-link-color;
+	}
+}
+
+.navbar-nav {
+	li {
+		a {
+			font-weight: bold;
+			text-transform: uppercase;
+			
+			&:active,
+			&:focus,
+			&:hover,
+			&:visited {
+				background-color: transparent !important;
+				color: #F25050;
+			}
+		}
+	}	
+}

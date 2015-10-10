@@ -1,0 +1,40 @@
+{
+	"name": "Schegrt",
+	"repository": "git@github.com:VedranS7/OsHackaton2015.git",
+
+	"dependencies": {
+		"map-stream": 		"0.1.0",
+		"bower": 			"1.3.12",
+		"gulp": 			"3.8.7",
+		"gulp-sass":		"0.7.3",
+		"gulp-slash": 		"1.1.3",
+		"gulp-include": 	"1.1.0",
+		"gulp-concat": 		"2.3.4",
+		"gulp-clean": 		"0.3.1",
+		"gulp-uglify": 		"1.0.0",
+		"gulp-jshint": 		"1.8.4",
+		"gulp-plumber": 	"0.6.5",
+		"gulp-minify-css":	"0.3.7",
+		"gulp-rename": 		"1.2.0",
+		"gulp-changed": 	"1.0.0",
+		"jshint-stylish": 	"0.4.0",
+		"gulp-jshint-file-reporter": "0.0.1",
+		"gulp-sourcemaps": 	"1.3.0"
+	},
+
+	"jshintConfig": {
+		"browser": 		true,
+		"esnext": 		false,
+		"globals": {
+		  "$": 			false,
+		  "angular":	false,
+		  "jQuery": 	false,
+		  "Sys": 		false
+		},
+		"globalstrict": false,
+		"quotmark": 	false,
+		"undef": 		false,
+		"unused": 		false,
+		"scripturl": 	true
+	}
+}
