@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using WebApp.Models;
+using WebApp.Models.Field.Dtos;
 
 namespace WebApp.Controllers_API
 {
@@ -23,7 +24,7 @@ namespace WebApp.Controllers_API
         }
 
         // GET: api/Providers/5
-        [ResponseType(typeof(ProviderUser))]
+        [ResponseType(typeof(ProviderDataDto))]
         public IHttpActionResult GetProviderUser(string id)
         {
             ProviderUser providerUser = db.Users.Find(id) as ProviderUser;
@@ -32,7 +33,7 @@ namespace WebApp.Controllers_API
                 return NotFound();
             }
 
-            return Ok(providerUser);
+            return Ok(new ProviderDataDto(providerUser));
         }
 
         protected override void Dispose(bool disposing)
