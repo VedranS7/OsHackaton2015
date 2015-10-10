@@ -203,6 +203,7 @@
     <Compile Include="Models\Field\Dtos\UserDataDto.cs" />
     <Compile Include="Models\Field\FieldOfInterest.cs" />
     <Compile Include="Models\Field\Project.cs" />
+    <Compile Include="Models\Field\ProjectFOI.cs" />
     <Compile Include="Models\Field\UserFOI.cs" />
     <Compile Include="Models\Field\ViewModels\FieldOfInterestViewModel.cs" />
     <Compile Include="Models\Field\ViewModels\InterestViewModel.cs" />
@@ -215,9 +216,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="css\dist\*" />
+    <Content Include="css\fonts\*" />
     <Content Include="js\dist\*" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -273,9 +274,6 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Providers\Create.cshtml" />
@@ -303,6 +301,7 @@
     <Content Include="Views\Student\Details.cshtml" />
     <Content Include="Views\Student\Edit.cshtml" />
     <Content Include="Views\Student\Index.cshtml" />
+    <Content Include="Views\UserHome\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

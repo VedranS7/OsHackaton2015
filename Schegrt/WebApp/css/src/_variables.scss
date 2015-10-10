@@ -10,7 +10,7 @@ $gray:                   lighten($gray-base, 33.5%) !default; // #555
 $gray-light:             lighten($gray-base, 46.7%) !default; // #777
 $gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
 
-$brand-primary:         darken(#F03232, 6.5%) !default; // #337ab7
+$brand-primary:         #fff !default; // #337ab7
 $brand-success:         #5cb85c !default;
 $brand-info:            #5bc0de !default;
 $brand-warning:         #f0ad4e !default;
@@ -19,7 +19,7 @@ $brand-danger:          #d9534f !default;
 $body-bg:               #fff !default;
 
 $link-color:            $brand-primary !default;
-$link-hover-color:      darken($link-color, 15%) !default;
+$link-hover-color:      $link-color !default;
 $link-hover-decoration: underline !default;
 
 $bootstrap-sass-asset-helper: false !default;
