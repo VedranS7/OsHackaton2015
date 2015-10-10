@@ -11,5 +11,7 @@ namespace WebApp.Models
     {
         public DbSet<FieldOfInterest> Fields { get; set; }
         public DatabaseContext() : base("DefaultConnection") { }
-    }
+
+		public System.Data.Entity.DbSet<WebApp.Models.Field.SkillLevel> SkillLevels { get; set; }
+	}
 }

@@ -187,6 +187,7 @@
     <Compile Include="Models\DatabaseContext.cs" />
     <Compile Include="Models\Field\FieldOfInterest.cs" />
     <Compile Include="Models\Field\SkillLevel.cs" />
+    <Compile Include="Models\Field\SkillLevelsController.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -247,6 +248,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\SkillLevels\Create.cshtml" />
+    <Content Include="Views\SkillLevels\Delete.cshtml" />
+    <Content Include="Views\SkillLevels\Details.cshtml" />
+    <Content Include="Views\SkillLevels\Edit.cshtml" />
+    <Content Include="Views\SkillLevels\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

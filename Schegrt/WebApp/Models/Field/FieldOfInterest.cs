@@ -8,6 +8,7 @@ namespace WebApp.Models.Field
 
 	public class FieldOfInterest
 	{
+		public int Id { get; set; }
 		public string name
 		{
 			get; set;
