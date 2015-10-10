@@ -221,6 +221,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="css\dist\*" />
+    <Content Include="css\fonts\*" />
     <Content Include="js\dist\*" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -281,6 +282,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+    <Content Include="Views\MatchMakingTest\Create.cshtml" />
+    <Content Include="Views\MatchMakingTest\Delete.cshtml" />
+    <Content Include="Views\MatchMakingTest\Details.cshtml" />
+    <Content Include="Views\MatchMakingTest\Edit.cshtml" />
+    <Content Include="Views\MatchMakingTest\Index.cshtml" />
+    <Content Include="Views\Projects\Create.cshtml" />
+    <Content Include="Views\Projects\Delete.cshtml" />
+    <Content Include="Views\Projects\Details.cshtml" />
+    <Content Include="Views\Projects\Edit.cshtml" />
+    <Content Include="Views\Projects\Index.cshtml" />
     <Content Include="Views\Providers\Create.cshtml" />
     <Content Include="Views\Providers\Delete.cshtml" />
     <Content Include="Views\Providers\Details.cshtml" />
@@ -291,22 +302,13 @@
     <Content Include="Views\Interests\Details.cshtml" />
     <Content Include="Views\Interests\Edit.cshtml" />
     <Content Include="Views\Interests\Index.cshtml" />
-    <Content Include="Views\Projects\Create.cshtml" />
-    <Content Include="Views\Projects\Delete.cshtml" />
-    <Content Include="Views\Projects\Details.cshtml" />
-    <Content Include="Views\Projects\Edit.cshtml" />
-    <Content Include="Views\Projects\Index.cshtml" />
-    <Content Include="Views\MatchMakingTest\Create.cshtml" />
-    <Content Include="Views\MatchMakingTest\Delete.cshtml" />
-    <Content Include="Views\MatchMakingTest\Details.cshtml" />
-    <Content Include="Views\MatchMakingTest\Edit.cshtml" />
-    <Content Include="Views\MatchMakingTest\Index.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Student\Create.cshtml" />
     <Content Include="Views\Student\Delete.cshtml" />
     <Content Include="Views\Student\Details.cshtml" />
     <Content Include="Views\Student\Edit.cshtml" />
     <Content Include="Views\Student\Index.cshtml" />
-    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\UserHome\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
