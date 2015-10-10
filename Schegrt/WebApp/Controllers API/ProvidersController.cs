@@ -25,9 +25,9 @@ namespace WebApp.Controllers_API
 
         // GET: api/Providers/5
         [ResponseType(typeof(ProviderDataDto))]
-        public IHttpActionResult GetProviderUser(string id)
+        public IHttpActionResult GetProviderUser(int id)
         {
-            ProviderUser providerUser = db.Users.Find(id) as ProviderUser;
+            ProviderUser providerUser = db.Users.FirstOrDefault(u => u.Id == id) as ProviderUser;
             if (providerUser == null)
             {
                 return NotFound();
