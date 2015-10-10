@@ -2,6 +2,12 @@ header {
 	background: #2E3138;
 	height: 86px;
 	padding: 18px;
+
+	#logo {
+		.navbar-brand {
+			font-size: 3rem,
+		}
+	}
 }
 
 .navbar-header {
