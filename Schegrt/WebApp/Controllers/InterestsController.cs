@@ -17,9 +17,9 @@ namespace WebApp.Controllers
         private DatabaseContext db = new DatabaseContext();
 
         // GET: Interests
-        public ActionResult Index(int? id)
+        public ActionResult Index()
         {
-            GeneralUser user = db.Users.Include(i => i.Interests).FirstOrDefault(u => u.Id == id);
+            GeneralUser user = db.Users.Include(i => i.Interests).FirstOrDefault(u => u.Email == User.Identity.Name);
             IList<UserFOI> result = user != null ? user.Interests : new List<UserFOI>();
             return View(result);
         }
@@ -40,7 +40,7 @@ namespace WebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                GeneralUser user = db.Users.FirstOrDefault(u => u.Id == interest.UserId);
+                GeneralUser user = db.Users.FirstOrDefault(u => u.Email == User.Identity.Name);
                 FieldOfInterest foi = db.Fields.FirstOrDefault(f => f.Id == interest.FOIId);
                 UserFOI userFOI = new UserFOI()
                 {

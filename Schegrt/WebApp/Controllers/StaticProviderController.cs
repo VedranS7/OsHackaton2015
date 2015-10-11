@@ -17,7 +17,8 @@ namespace WebApp.Controllers
         // GET: StaticProvider
         public ActionResult Index()
         {
-            return View(db.Users.ToList());
+            ProviderUser providerUser = db.Users.OfType<ProviderUser>().FirstOrDefault(u => u.Email == User.Identity.Name);
+            return View(providerUser);
         }
 
         // GET: StaticProvider/Details/5
