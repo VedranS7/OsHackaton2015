@@ -1,42 +1,63 @@
 ﻿@model WebApp.Models.ProviderUser
-
-<aside id="sidebar-menu" class="" ng-controller="UserProviderController">
-    <input type="hidden" class="user-id" value="@Model.Id" />
-    <div class="sidebar-block">
-        <div class="profile">
-            <h4><a href="#" editable-text="company.CompanyName">{{company.CompanyName || "empty"}}</a></h4>
+<div ng-controller="UserProviderController">
+    <aside id="sidebar-menu" class="pull-left">
+        <input type="hidden" class="user-id" value="@Model.Id" />
+        <div class="sidebar-block">
+            <div class="profile">
+                <h4><a href="#" editable-text="company.CompanyName">{{company.CompanyName || "empty"}}</a></h4>
+            </div>
         </div>
-    </div>
-    <div class="category">About</div>
-    <div class="sidebar-block">
-        <ul class="list-about">
-            <li><i class="fa fa-map-marker"></i><a href="#" editable-text="company.Location">{{company.Location || "empty"}}</a></li>
-            <li><i class="fa fa-link"></i> <a href="#" editable-text="company.URL">{{company.URL || "empty"}}</a></li>
-            <li><i class="fa fa-envelope"></i> <a href="mailto:{{::company.Email}}">{{::company.Email}}</a></li>
-        </ul>
-    </div>
-    <div class="category">Info</div>
-    <div class="sidebar-block description">
-        <a href="#" editable-textarea="company.Description">{{company.Description || 'no description'}}</a>
-    </div>
-    <a href="#" ng-click="saveCompanyInfo()" class="btn btn-primary" ng-show="editedInfo">Save company info</a>
-    <div class="category">Skill set</div>
-    <div class="sidebar-block">
-       @*<div class="col-md-12">
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Add skill..." ng-model="newSkill" />
-            <span class="input-group-btn">
-                <button class="btn btn-default" type="button" ng-click="addSkill()" ng-disabled="newSkill.length == 0">Add skill</button>
-            </span>
+        <div class="category">About</div>
+        <div class="sidebar-block">
+            <ul class="list-about">
+                <li><i class="fa fa-map-marker"></i><a href="#" editable-text="company.Location">{{company.Location || "empty"}}</a></li>
+                <li><i class="fa fa-link"></i> <a href="#" editable-text="company.URL">{{company.URL || "empty"}}</a></li>
+                <li><i class="fa fa-envelope"></i> <a href="mailto:{{::company.Email}}">{{::company.Email}}</a></li>
+            </ul>
         </div>
-    </div>*@ 
-        <div class="skill" ng-repeat="item in companyInterests | orderBy: 'Level' track by $id(item)">
-            <div class="label">{{item.Name}}</div>
-            <div class="bg" style="width:  {{item.Level/5 * 100}}%"></div>
-            
+        <div class="category">Info</div>
+        <div class="sidebar-block description">
+            <a href="#" editable-textarea="company.Description">{{company.Description || 'no description'}}</a>
         </div>
+        <a href="#" ng-click="saveCompanyInfo()" class="btn btn-primary" ng-show="editedInfo">Save company info</a>
+        <div class="category">Skill set</div>
+        <div class="sidebar-block">
+            @*<div class="col-md-12">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Add skill..." ng-model="newSkill" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" ng-click="addSkill()" ng-disabled="newSkill.length == 0">Add skill</button>
+                        </span>
+                    </div>
+                </div>*@
+            <div class="skill" ng-repeat="item in companyInterests | orderBy: 'Level' track by $id(item)">
+                <div class="label">{{item.Name}}</div>
+                <div class="bg" style="width:  {{item.Level/5 * 100}}%"></div>
+
+            </div>
+
+        </div>
+    </aside>
+    <div class="recommendations pull-left">
+        Or you can search trough users: <br /><br />
+        <input type="text" ng-model="search" placeholder="search..." class="form-control" style="width: 200px;" />
+        <table class="table table-stripped">
+            <thead>
+                <tr>
+                    <th class="name">Name</th>
+                    <th class="location">Location</th>
+                    <th class="interests">Interests</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="recommendation" ng-repeat="item in userRecommendations | filter: search track by $id(item)">
+                    <td>{{::item.Name}}</td>
+                    <td>{{::item.Location}}</td>
+                    <td>{{::item.Interests}}</td>
+                </tr>
+            </tbody>
+        </table>
 
     </div>
-</aside>
-
+</div>
 <script src="~/js/dist/user.min.js" type="text/javascript"></script>
