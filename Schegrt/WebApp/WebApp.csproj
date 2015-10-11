@@ -180,6 +180,7 @@
     <Compile Include="Controllers API\FOIsController.cs" />
     <Compile Include="Controllers API\InterestsController.cs" />
     <Compile Include="Controllers API\ProjectRecommendationsController.cs" />
+    <Compile Include="Controllers API\StudentsController.cs" />
     <Compile Include="Controllers\ProjectFOIsController.cs" />
     <Compile Include="Controllers API\ProjectsController.cs" />
     <Compile Include="Controllers API\ProvidersController.cs" />
@@ -204,6 +205,7 @@
     <Compile Include="Models\DatabaseContext.cs" />
     <Compile Include="Models\Field\Category.cs" />
     <Compile Include="Models\Field\Dtos\InterestsDto.cs" />
+    <Compile Include="Models\Field\Dtos\StudentDataDto.cs" />
     <Compile Include="Models\Field\Dtos\ProviderDataDto.cs" />
     <Compile Include="Models\Field\Dtos\RecomendedProjectDto.cs" />
     <Compile Include="Models\Field\Dtos\RecommendedUserDto.cs" />
