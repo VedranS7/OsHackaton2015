@@ -22,12 +22,14 @@
     <a href="#" ng-click="saveCompanyInfo()" class="btn btn-primary" ng-show="editedInfo">Save company info</a>
     <div class="category">Skill set</div>
     <div class="sidebar-block">
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Add skill..." ng-model="newSkill" />
-            <span class="input-group-btn">
-                <button class="btn btn-default" type="button" ng-click="addSkill()" ng-disabled="newSkill.length == 0">Add skill</button>
-            </span>
-        </div>
+        <div class="col-md-12">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Add skill..." ng-model="newSkill" />
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" ng-click="addSkill()" ng-disabled="newSkill.length == 0">Add skill</button>
+                </span>
+            </div>
+        </div>        
     </div>
 </aside>
 

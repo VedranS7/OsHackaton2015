@@ -24,7 +24,11 @@
 
 		$http.get(interestsUrl).then(function (response) {
 			$scope.companyInterests = response.data;
-		})
+		});
+
+		$scope.addSkill = function () {
+			
+		};
 
 		$scope.$watchGroup(['company.CompanyName', 'company.Location', 'company.URL', 'company.Email', 'company.Description'], function (newValues, oldValues, scope) { 
 			$scope.company.CompanyName = newValues[0];
