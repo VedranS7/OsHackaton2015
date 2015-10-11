@@ -4,5 +4,16 @@
 
 <div class="container">
     @Html.Partial("/Views/Home/About.cshtml")
-</div>
 
+    <div class="jumbotron container">
+        <p class="lead">
+            <b>@ViewBag.Providers</b> intership providers with <b>@ViewBag.ProviderInterests</b> areas of interests offering <b>@ViewBag.ProviderProjects</b> projects!.
+        </p>
+    </div>
+
+    <div class="jumbotron container">
+        <p class="lead">
+            <b>@ViewBag.Students</b> students looking for intership!
+        </p>
+    </div>
+</div>

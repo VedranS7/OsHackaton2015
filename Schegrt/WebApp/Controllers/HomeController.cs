@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebApp.Models;
 
 namespace WebApp.Controllers
 {
@@ -10,6 +11,14 @@ namespace WebApp.Controllers
     {
         public ActionResult Index()
         {
+            DatabaseContext db = new DatabaseContext();
+
+            ViewBag.Providers = db.Users.OfType<StudentUser>().Count();
+            ViewBag.Students = db.Users.OfType<ProviderUser>().Count();
+            ViewBag.ProviderInterests = db.Users.OfType<StudentUser>().Sum(x => x.Interests.Count);
+            ViewBag.ProviderProjects = db.Projects.Count();
+            ViewBag.StudentInterests = db.Users.OfType<ProviderUser>().Sum(x => x.Interests.Count);
+
             return View();
         }
 

@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WebApp.Models;
+using WebApp.Models.Matchers;
 
 namespace WebApp.Controllers
 {
@@ -18,6 +19,13 @@ namespace WebApp.Controllers
         public ActionResult Index()
         {
             ProviderUser providerUser = db.Users.OfType<ProviderUser>().FirstOrDefault(u => u.Email == User.Identity.Name);
+
+            if (providerUser != null)
+            {
+                List<GeneralUser> otherTypeOfUsers = providerUser is StudentUser ? db.Users.OfType<ProviderUser>().Cast<GeneralUser>().ToList() : db.Users.OfType<StudentUser>().Cast<GeneralUser>().ToList();
+                ViewBag.Recommendations = new ProviderMatcher(providerUser).GetMatchingProvider(otherTypeOfUsers);
+            }
+
             return View(providerUser);
         }
 
