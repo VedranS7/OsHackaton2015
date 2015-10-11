@@ -57,7 +57,7 @@
 </div>
 
 <p>
-    @Html.ActionLink("Create New", "Create", "Interests")
+    @Html.ActionLink("Create New", "Create", "Interests", null, null)
 </p>
 <table class="table">
     <tr>
@@ -81,7 +81,7 @@
                 @Html.DisplayFor(modelItem => item.Level)
             </td>
             <td>
-                @Html.ActionLink("Delete", "Delete", "Interests", new { id = item.Id })
+                @Html.ActionLink("Delete", "Delete", "Interests", new { id = item.Id }, null)
             </td>
         </tr>
     }
