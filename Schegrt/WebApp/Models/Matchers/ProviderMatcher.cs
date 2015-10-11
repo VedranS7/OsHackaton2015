@@ -26,7 +26,7 @@ namespace WebApp.Models.Matchers
 				int searchedScore = 0;
 				foreach (UserFOI searchedFoi in searchedUser.Interests)
 				{
-					if(_initiator.Interests.Any(i=> i.Foi.Id == searchedFoi.Foi.Id))
+					if(_initiator.Interests.Any(i=> i.Foi.Id == searchedFoi.Foi.Id && searchedFoi.Level >= i.Level))
 					{
 						searchedScore++;
 					}
