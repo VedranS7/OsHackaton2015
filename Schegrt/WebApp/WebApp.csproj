@@ -179,10 +179,11 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers API\FOIsController.cs" />
     <Compile Include="Controllers API\InterestsController.cs" />
-    <Compile Include="Controllers API\ProjectFOIsController.cs" />
+    <Compile Include="Controllers API\ProjectRecommendationsController.cs" />
+    <Compile Include="Controllers\ProjectFOIsController.cs" />
     <Compile Include="Controllers API\ProjectsController.cs" />
     <Compile Include="Controllers API\ProvidersController.cs" />
-    <Compile Include="Controllers API\RecommendationsController.cs" />
+    <Compile Include="Controllers API\UserRecommendationsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
@@ -204,6 +205,7 @@
     <Compile Include="Models\Field\Category.cs" />
     <Compile Include="Models\Field\Dtos\InterestsDto.cs" />
     <Compile Include="Models\Field\Dtos\ProviderDataDto.cs" />
+    <Compile Include="Models\Field\Dtos\RecomendedProjectDto.cs" />
     <Compile Include="Models\Field\Dtos\RecommendedUserDto.cs" />
     <Compile Include="Models\Field\Dtos\UserDataDto.cs" />
     <Compile Include="Models\Field\FieldOfInterest.cs" />

@@ -8,33 +8,34 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-using WebApp.Models;
+using WebApp.Models.Field;
 using WebApp.Models.Field.Dtos;
 using WebApp.Models.Matchers;
+using WebApp.Models;
+
 
 namespace WebApp.Controllers_API
 {
-    public class RecommendationsController : ApiController
+    public class ProjectRecommendationsController : ApiController
     {
         private DatabaseContext db = new DatabaseContext();
 
         // GET: api/Recommendations
-        public List<RecommendedUserDto> GetRecommendations(int id)
+        public List<RecomendedProjectDto> GetRecommendations(int id)
         {
             GeneralUser initiatior = db.Users.FirstOrDefault(gu => gu.Id == id);
-            List<RecommendedUserDto> result = new List<RecommendedUserDto>();
+            List<RecomendedProjectDto> result = new List<RecomendedProjectDto>();
             if (initiatior != null)
             {
-                List<GeneralUser> otherTypeOfUsers = initiatior is StudentUser ? db.Users.OfType<ProviderUser>().Cast<GeneralUser>().ToList() : db.Users.OfType<StudentUser>().Cast<GeneralUser>().ToList();
-                foreach(GeneralUser user in new ProviderMatcher(initiatior).GetMatchingProvider(otherTypeOfUsers))
+				List<Project> projectList = db.Projects.ToList();
+                foreach(Project project in new ProjectMatcher(initiatior).GetMatchingProvider(projectList))
                 {
-                    if(user.GetType() != initiatior.GetType())
+                    if(project.GetType() != initiatior.GetType())
                     {
-                        result.Add(new RecommendedUserDto(user));
+                        result.Add(new RecomendedProjectDto(project));
                     }
                 }
             }
-
             return result;
         }
 

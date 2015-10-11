@@ -1,6 +1,7 @@
 ﻿@model WebApp.Models.ProviderUser
 
-<aside id="sidebar-menu" class="" ng-controller="UserController" data-user-id="@Model.Id">
+<aside id="sidebar-menu" class="" ng-controller="UserController">
+    <input type="hidden" class="user-id" value="@Model.Id" />
     <div class="sidebar-block">
         <div class="profile">
             <h4><a href="#" editable-text="company.CompanyName">{{company.CompanyName || "empty"}}</a></h4>
@@ -11,13 +12,14 @@
         <ul class="list-about">
             <li><i class="fa fa-map-marker"></i><a href="#" editable-text="company.Location">{{company.Location || "empty"}}</a></li>
             <li><i class="fa fa-link"></i> <a href="#" editable-text="company.URL">{{company.URL || "empty"}}</a></li>
-            <li><i class="fa fa-email"></i> <a href="#" editable-text="company.Email">{{company.Email || "empty"}}</a></li>
+            <li><i class="fa fa-envelope"></i> <a href="#" editable-text="company.Email">{{company.Email || "empty"}}</a></li>
         </ul>
     </div>
     <div class="category">Info</div>
     <div class="sidebar-block">
-        <p>{{company.Description}}</p>
+        <a href="#" editable-textarea="company.Description"><pre></pre>{{company.Description || 'no description'}}</pre></a>
     </div>
+    <a href="#" ng-click="saveCompanyInfo()" class="btn btn-primary" ng-show="editedInfo">Save company info</a>
     <div class="category">Skill set</div>
 </aside>
 
