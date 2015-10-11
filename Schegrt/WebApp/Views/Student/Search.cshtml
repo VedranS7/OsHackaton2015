@@ -1,0 +1,34 @@
+﻿@model IEnumerable<WebApp.Models.StudentUser>
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<table class="table">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Interests)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.Raw(item.Surname + "," + item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location)
+        </td>
+        <td>
+            @String.Join("," , item.Interests.Select(x => x.Foi.Name))
+        </td>
+    </tr>
+}
+
+</table>

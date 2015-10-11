@@ -318,6 +318,7 @@
     <Content Include="Views\StaticProvider\Index.cshtml" />
     <Content Include="Views\StaticStudent\Edit.cshtml" />
     <Content Include="Views\StaticStudent\Index.cshtml" />
+    <Content Include="Views\Student\Search.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
