@@ -1,17 +1,18 @@
-﻿@model WebApp.Models.ProviderUser
-
+﻿@model WebApp.Models.StudentUser
+ 
 @using WebApp.Models;
 
 @{
     ViewBag.Title = "Details";
 }
-
 <div>
-    <h4>Provider</h4>
+    <h4>Student</h4>
     <hr />
+
     <p>
         @Html.ActionLink("Edit", "Edit", new { id = Model.Id })
     </p>
+
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Email)
@@ -30,27 +31,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CompanyName)
+            @Html.DisplayNameFor(model => model.Name)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CompanyName)
+            @Html.DisplayFor(model => model.Name)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Description)
+            @Html.DisplayNameFor(model => model.Surname)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.URL)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.URL)
+            @Html.DisplayFor(model => model.Surname)
         </dd>
 
     </dl>
@@ -87,7 +80,6 @@
     }
 
 </table>
-
 <table class="table">
     <tr>
         <th>

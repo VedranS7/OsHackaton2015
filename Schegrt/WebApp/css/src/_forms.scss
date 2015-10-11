@@ -6,12 +6,21 @@ p.error {
 	color: red;
 }
 
-/*.editable-controls {
-	display: inline-block;
-	max-width: 270px;
-	width: 100%;
+.editable {
+	border-bottom: 0 none !important;
+	color: $brand-primary !important;
+	text-decoration: none !important;
+}
 
-	input[type=text] {
-		width: 80%;
+.editable-controls {
+	textarea {
+		display: block !important;
+		margin-bottom: 8px !important;
+		width: 270px !important;
 	}
-}*/
+
+	.editable-buttons {
+		float: right;
+		margin-bottom: 8px !important;
+	}
+}
