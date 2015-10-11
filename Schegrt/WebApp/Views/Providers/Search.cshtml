@@ -4,8 +4,6 @@
     ViewBag.Title = "Search";
 }
 
-<h2>Search</h2>
-
 <table class="table">
     <tr>
         <th>
@@ -28,6 +26,7 @@
             @Html.DisplayFor(modelItem => item.Location)
         </td>
         <td>
+            @String.Join("," , item.Interests.Select(x => x.Foi.Name))
         </td>
     </tr>
 }
