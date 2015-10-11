@@ -31,7 +31,8 @@ header {
 }
 
 .navbar-header {
-	width: 200px;
+	border-right: 1px solid lighten(#26A69A, 5%);
+	width: 300px;
 
 	/*a {
 		color: $navbar-default-link-color;
