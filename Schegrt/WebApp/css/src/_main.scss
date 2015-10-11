@@ -24,3 +24,8 @@ main {
 	padding: 16px;
 	width: calc(100% - 300px);
 }
+
+.no-bg {
+	background: none transparent !important;
+	border: 0 none !important;
+}

@@ -1,34 +1,32 @@
 ﻿@model IEnumerable<WebApp.Models.ProviderUser>
-
 @{
     ViewBag.Title = "Search";
 }
-
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CompanyName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Location)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Interests)
-        </th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CompanyName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Location)
-        </td>
-        <td>
-            @String.Join("," , item.Interests.Select(x => x.Foi.Name))
-        </td>
-    </tr>
-}
-
+<aside id="sidebar-menu" class="pull-left no-bg"></aside>
+<table class="table table-stripped">
+    <thead>
+        <tr>
+            <th class="name">Name</th>
+            <th class="location">Location</th>
+            <th class="interests">Interests</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            if (item.CompanyName != null) { 
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompanyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                <td>
+                    @String.Join(", ", item.Interests.Select(x => x.Foi.Name))
+                </td>
+            </tr>
+            }
+        }
+        </tbody>
 </table>

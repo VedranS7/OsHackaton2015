@@ -5,7 +5,7 @@
         <input type="hidden" class="user-id" value="@Model.Id" />
         <div class="sidebar-block">
             <div class="profile">
-                <h4><a href="#" editable-text="company.StudentName">{{company.StudentName || "empty"}}</a></h4>
+                <h4><a href="#" editable-text="company.StudentName">{{company.StudentName || (company.Name + ' ' + company.Surname) || 'empty'}}</a></h4>
             </div>
         </div>
         <div class="category">About</div>
@@ -43,6 +43,7 @@
             <div class="skill" ng-repeat="item in companyInterests | orderBy: 'Level' track by $id(item)" ng-click="deleteSkill(item.Id)">
                 <div class="label">{{item.Name}}</div>
                 <div class="bg" style="width:  {{item.Level/5 * 100}}%"></div>
+                <span>&times;</span>
             </div>
 
         </div>

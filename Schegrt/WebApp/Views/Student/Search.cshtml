@@ -1,34 +1,32 @@
 ﻿@model IEnumerable<WebApp.Models.StudentUser>
-
 @{
     ViewBag.Title = "Search";
 }
-
-<table class="table">
-    <tr>
-        <th>
-            Name
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Location)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Interests)
-        </th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.Raw(item.Surname + "," + item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Location)
-        </td>
-        <td>
-            @String.Join("," , item.Interests.Select(x => x.Foi.Name))
-        </td>
-    </tr>
-}
-
+<aside id="sidebar-menu" class="pull-left no-bg"></aside>
+<table class="table table-stripped">
+    <thead>
+        <tr>
+            <th class="name">Name</th>
+            <th class="location">Location</th>
+            <th class="interests">Interests</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            if (item.Name != null) { 
+            <tr>
+                <td>
+                    @Html.Raw(item.Surname + ", " + item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                <td>
+                    @String.Join(", ", item.Interests.Select(x => x.Foi.Name))
+                </td>
+            </tr>
+            }
+        }
+        </tbody>
 </table>
