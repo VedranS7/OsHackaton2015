@@ -79,7 +79,7 @@ namespace WebApp.Controllers
             UserFOI userFOI = db.UserFOIs.Find(id);
             db.UserFOIs.Remove(userFOI);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", db.Users.FirstOrDefault(x => x.Email == User.Identity.Name) is StudentUser ? "staticstudent" : "staticprovider", null);
         }
 
         protected override void Dispose(bool disposing)
