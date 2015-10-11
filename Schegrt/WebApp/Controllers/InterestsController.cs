@@ -50,7 +50,7 @@ namespace WebApp.Controllers
                 };
                 db.UserFOIs.Add(userFOI);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", user is StudentUser ? "staticstudent" : "staticprovider", null);
             }
 
             return View(interest);
