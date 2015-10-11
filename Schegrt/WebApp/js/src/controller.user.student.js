@@ -73,21 +73,21 @@
 
 		loadMatchesInterests();
 
-		// $timeout(function () {
-		// 	$scope.$watchGroup(['company.CompanyName', 'company.Location', 'company.URL', 'company.Description'], function (newValues, oldValues, scope) { 
-		// 		$scope.company.CompanyName = newValues[0];
-		// 		$scope.company.Location = newValues[1];
-		// 		$scope.company.URL = newValues[2];
-		// 		$scope.company.Description = newValues[3];
+		$timeout(function () {
+			$scope.$watchGroup(['company.CompanyName', 'company.Location', 'company.URL', 'company.Description'], function (newValues, oldValues, scope) { 
+				$scope.company.CompanyName = newValues[0];
+				$scope.company.Location = newValues[1];
+				$scope.company.URL = newValues[2];
+				$scope.company.Description = newValues[3];
 				
-		// 		$http({
-		// 			method: 'PUT',
-		// 			data: $scope.company,
-		// 			url: '/api/Providers/PutProviderUser'
-		// 		}).then(function (response) {
-		// 		});
-		// 	});
-		// }, 1000);
+				$http({
+					method: 'PUT',
+					data: $scope.company,
+					url: '/api/Students/PutProviderUser'
+				}).then(function (response) {
+				});
+			});
+		}, 1000);
 
 	});
 
