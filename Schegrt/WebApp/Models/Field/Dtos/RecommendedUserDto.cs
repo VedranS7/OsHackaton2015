@@ -18,7 +18,7 @@ namespace WebApp.Models.Field.Dtos
             Id = user.Id;
             Name = user.GetName();
             Location = user.Location;
-            Interests = String.Join(",", user.Interests.Select(x => x.Foi.Name).ToList());
+            Interests = String.Join(", ", user.Interests.Select(x => x.Foi.Name).ToList());
         }
     }
 }
