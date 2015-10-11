@@ -12,7 +12,7 @@
             <ul class="list-about">
                 <li><i class="fa fa-map-marker"></i><a href="#" editable-text="company.Location">{{company.Location || "empty"}}</a></li>
                 <li><i class="fa fa-link"></i> <a href="#" editable-text="company.URL">{{company.URL || "empty"}}</a></li>
-                <li><i class="fa fa-envelope"></i> <a href="mailto:{{::company.Email}}">{{::company.Email}}</a></li>
+                <li><i class="fa fa-envelope"></i> <a href="mailto:{{company.Email}}">{{company.Email}}</a></li>
             </ul>
         </div>
         <div class="category">Info</div>
@@ -39,7 +39,7 @@
         </div>
     </aside>
     <div class="recommendations pull-left">
-        Or you can search trough users: <br /><br />
+        Or you can search trough found users: <br /><br />
         <input type="text" ng-model="search" placeholder="search..." class="form-control" style="width: 200px;" />
         <table class="table table-stripped">
             <thead>

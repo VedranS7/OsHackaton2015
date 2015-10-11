@@ -1,8 +1,8 @@
 (function (global) {
 	'use strict';
 
-	var controller = ['$scope', '$element', '$http'];
-	controller.push(function ($scope, $element, $http) {
+	var controller = ['$scope', '$element', '$http', '$timeout'];
+	controller.push(function ($scope, $element, $http, $timeout) {
 		$scope.company = {
 			CompanyName: null,
 			Location: null,
@@ -36,13 +36,12 @@
 
 		};
 
-		if ($scope.company.Email !== null) {
-			$scope.$watchGroup(['company.CompanyName', 'company.Location', 'company.URL', 'company.Email', 'company.Description'], function (newValues, oldValues, scope) { 
+		$timeout(function () {
+			$scope.$watchGroup(['company.CompanyName', 'company.Location', 'company.URL', 'company.Description'], function (newValues, oldValues, scope) { 
 				$scope.company.CompanyName = newValues[0];
 				$scope.company.Location = newValues[1];
 				$scope.company.URL = newValues[2];
-				$scope.company.Email = newValues[3];
-				$scope.company.Description = newValues[4];
+				$scope.company.Description = newValues[3];
 				
 				$http({
 					method: 'PUT',
@@ -51,7 +50,7 @@
 				}).then(function (response) {
 				});
 			});
-		}
+		}, 1000);
 
 	});
 
