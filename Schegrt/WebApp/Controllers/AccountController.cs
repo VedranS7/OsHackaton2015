@@ -183,9 +183,9 @@ namespace WebApp.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 					if (user.Type == 1)
-	                    return RedirectToAction("Index", "staticstudent");
+	                    return RedirectToAction("Index", "students");
 					else
-						return RedirectToAction("Index", "staticprovider");
+						return RedirectToAction("Index", "providers");
 				}
                 AddErrors(result);
             }

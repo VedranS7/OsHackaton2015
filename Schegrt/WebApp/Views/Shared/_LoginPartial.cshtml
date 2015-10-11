@@ -12,11 +12,11 @@
                     GeneralUser user = db.Users.FirstOrDefault(x => x.Email == User.Identity.Name) ;
                     if (user as StudentUser != null)
                     {
-                        @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "staticstudent", routeValues: null, htmlAttributes: new { title = "staticstudent" })
+                        @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "students", routeValues: null, htmlAttributes: new { title = "staticstudent" })
 }
                     else
                     {
-                        @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "staticprovider", routeValues: null, htmlAttributes: new { title = "staticprovider" })
+                        @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "providers", routeValues: null, htmlAttributes: new { title = "staticprovider" })
 }
                 }
 
