@@ -40,7 +40,7 @@ namespace WebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                GeneralUser user = db.Users.FirstOrDefault(u => u.Id == interest.UserId);
+                GeneralUser user = db.Users.FirstOrDefault(u => u.Email == User.Identity.Name);
                 FieldOfInterest foi = db.Fields.FirstOrDefault(f => f.Id == interest.FOIId);
                 UserFOI userFOI = new UserFOI()
                 {
