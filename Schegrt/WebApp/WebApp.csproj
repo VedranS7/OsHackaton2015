@@ -185,6 +185,7 @@
     <Compile Include="Controllers API\ProvidersController.cs" />
     <Compile Include="Controllers API\UserRecommendationsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\FieldsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -193,6 +194,7 @@
     <Compile Include="Controllers\MatchMakingTestController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Controllers\ProvidersController.cs" />
+    <Compile Include="Controllers\StaticProviderController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -282,10 +284,6 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-    <Content Include="Views\Providers\Create.cshtml" />
-    <Content Include="Views\Providers\Delete.cshtml" />
-    <Content Include="Views\Providers\Details.cshtml" />
-    <Content Include="Views\Providers\Edit.cshtml" />
     <Content Include="Views\Providers\Index.cshtml" />
     <Content Include="Views\Interests\Create.cshtml" />
     <Content Include="Views\Interests\Delete.cshtml" />
@@ -313,6 +311,13 @@
     <Content Include="Views\ProjectFOIs\Details.cshtml" />
     <Content Include="Views\ProjectFOIs\Edit.cshtml" />
     <Content Include="Views\ProjectFOIs\Index.cshtml" />
+    <Content Include="Views\Providers\Details.cshtml" />
+    <Content Include="Views\Providers\Search.cshtml" />
+    <Content Include="Views\StaticProvider\Create.cshtml" />
+    <Content Include="Views\StaticProvider\Delete.cshtml" />
+    <Content Include="Views\StaticProvider\Details.cshtml" />
+    <Content Include="Views\StaticProvider\Edit.cshtml" />
+    <Content Include="Views\StaticProvider\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

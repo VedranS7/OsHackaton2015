@@ -1,0 +1,39 @@
+﻿@model IEnumerable<WebApp.Models.ProviderUser>
+
+@{ 
+    Layout = null;
+}
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Search</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Interests)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location)
+        </td>
+        <td>
+        </td>
+    </tr>
+}
+
+</table>

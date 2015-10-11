@@ -1,7 +1,7 @@
 (function(global) {
 	'use strict';
 
-	var appGlobal = angular.module('app.global', []);
+	var appGlobal = angular.module('app.global', ["xeditable"]);
 
 	appGlobal.config([function () {
 		

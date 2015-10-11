@@ -9,6 +9,10 @@ header {
 	}
 }
 
+#main-nav {
+	width: calc(100% - 50px);
+}
+
 .nav {
 	> li {
 		margin-right: 12px;
@@ -37,18 +41,24 @@ header {
 .navbar-nav {
 	li {
 		a {
-			font-weight: bold;
-			padding: 0px 15px;
-			height: 70px;
-			line-height: 70px;
-			font-size: 1.3rem;
-			text-transform: uppercase;
-			
-			&:active,
-			&:focus,
-			&:hover {
-				background-color: #22958B !important;
-				/*color: #fff;*/
+			&:not(.btn) {
+				font-weight: bold;
+				padding: 0px 15px;
+				height: 70px;
+				line-height: 70px;
+				font-size: 1.3rem;
+				text-transform: uppercase;
+				
+				&:active,
+				&:focus,
+				&:hover {
+					background-color: #22958B !important;
+					/*color: #fff;*/
+				}
+			}
+		
+			&.btn {
+				margin-top: 15px;
 			}
 		}
 	}	

@@ -3,11 +3,10 @@
     ViewBag.Title = "Register";
 }
 
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form", @ng_controller = "AuthController", @name = "register" }))
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal container", role = "form", @ng_controller = "AuthController", @name = "register" }))
 {
     @Html.AntiForgeryToken()
     <h4>Join as an apprentice or internship provider</h4>
-    <hr />
     @Html.ValidationSummary("", new { @class = "text-danger" })
     <div class="form-group">
         @Html.LabelFor(m => m.Email, new { @class = "col-md-4 control-label" })

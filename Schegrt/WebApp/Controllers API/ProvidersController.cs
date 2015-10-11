@@ -36,6 +36,25 @@ namespace WebApp.Controllers_API
             return Ok(new ProviderDataDto(providerUser));
         }
 
+        [ResponseType(typeof(ProviderDataDto))]
+        public IHttpActionResult PutProviderUser(ProviderDataDto data)
+        {
+            ProviderUser user = db.Users.FirstOrDefault(u => u.Email == User.Identity.Name) as ProviderUser;
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            user.CompanyName = data.CompanyName;
+            user.Location = data.Location;
+            user.URL = data.URL;
+
+            db.Entry(user).State = EntityState.Modified;
+            db.SaveChanges();
+
+            return Ok();
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
