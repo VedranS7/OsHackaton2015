@@ -1,4 +1,5 @@
 ﻿@using Microsoft.AspNet.Identity
+@using WebApp.Models
 @if (Request.IsAuthenticated)
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
@@ -7,7 +8,18 @@
 
         <ul class="nav navbar-nav navbar-right">
             <li>
-                @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                @{  DatabaseContext db = new DatabaseContext();
+                    GeneralUser user = db.Users.FirstOrDefault(x => x.Email == User.Identity.Name);
+                    if (typeof(StudentUser) == user.GetType())
+                    {
+                        @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "staticstudent", routeValues: null, htmlAttributes: new { title = "staticstudent" })
+}
+                    else
+                    {
+                        @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "staticprovider", routeValues: null, htmlAttributes: new { title = "staticprovider" })
+}
+                }
+
             </li>
             <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
         </ul>
