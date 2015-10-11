@@ -35,7 +35,8 @@ $fa-font-path:        "/fonts" !default;
 @import "../../bower_components/font-awesome/scss/stacked";
 @import "../../bower_components/font-awesome/scss/icons";
 
-
+// EDIT IN PLACE
+@import "../../bower_components/angular-xeditable/dist/css/xeditable.css";
 
 
 @import "../src/main";
