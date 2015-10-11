@@ -16,8 +16,8 @@
         </ul>
     </div>
     <div class="category">Info</div>
-    <div class="sidebar-block">
-        <a href="#" editable-textarea="company.Description"><pre></pre>{{company.Description || 'no description'}}</pre></a>
+    <div class="sidebar-block description">
+        <a href="#" editable-textarea="company.Description">{{company.Description || 'no description'}}</a>
     </div>
     <a href="#" ng-click="saveCompanyInfo()" class="btn btn-primary" ng-show="editedInfo">Save company info</a>
     <div class="category">Skill set</div>
