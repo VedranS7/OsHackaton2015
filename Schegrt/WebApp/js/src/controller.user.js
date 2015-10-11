@@ -12,6 +12,7 @@
 		};
 		$scope.companyInterests = [];
 		$scope.editedInfo = false;
+		$scope.newSkill = '';
 
 		var providerId = $('#sidebar-menu').find('.user-id').val();
 		var providersUrl = ('/api/Providers/:id').replace(':id', providerId),
@@ -23,7 +24,6 @@
 
 		$http.get(interestsUrl).then(function (response) {
 			$scope.companyInterests = response.data;
-			console.log($scope.companyInterests)
 		})
 
 		$scope.$watchGroup(['company.CompanyName', 'company.Location', 'company.URL', 'company.Email', 'company.Description'], function (newValues, oldValues, scope) { 
