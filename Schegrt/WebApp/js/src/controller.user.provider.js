@@ -58,5 +58,3 @@
 		.controller('UserProviderController', controller);
 
 }(this) /* Auto-invoked */ );
-
-
