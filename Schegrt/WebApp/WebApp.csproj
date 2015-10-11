@@ -309,6 +309,7 @@
     <Content Include="Views\ProjectFOIs\Edit.cshtml" />
     <Content Include="Views\ProjectFOIs\Index.cshtml" />
     <Content Include="Views\Providers\Details.cshtml" />
+    <Content Include="Views\Providers\Search.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
