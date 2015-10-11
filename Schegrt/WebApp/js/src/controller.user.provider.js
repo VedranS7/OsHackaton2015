@@ -13,12 +13,15 @@
 		$scope.companyInterests = [];
 		$scope.userRecommendations = [];
 		$scope.editedInfo = false;
-		$scope.newSkill = '';
+		$scope.newSkillLevel = '';
+		$scope.newSkillName = -1;
+		$scope.interestsList = [];
 
 		var providerId = $('#sidebar-menu').find('.user-id').val();
 		var providersUrl = ('/api/Providers/:id').replace(':id', providerId),
 			interestsUrl = ('/api/Interests/:id').replace(':id', providerId),
-			matchesUrl = ('/api/UserRecommendations/:id').replace(':id', providerId);
+			matchesUrl = ('/api/UserRecommendations/:id').replace(':id', providerId),
+			interestsListUrl = ('/api/FOIs/GetFields');
 
 		$http.get(providersUrl).then(function (response) {
 			$scope.company = response.data;
@@ -30,10 +33,33 @@
 
 		$http.get(matchesUrl).then(function (response) {
 			$scope.userRecommendations = response.data;
+		});
+
+		$http.get(interestsListUrl).then(function (odgovora) {
+			$scope.interestsList = odgovora.data;
+		});
+
+		$('.select2').select2().on('change', function (e) {
+			var $this = $(e.currentTarget);
+			$scope.newSkillName = $this.val();
 		})
 
 		$scope.addSkill = function () {
+			var data = {
+				FOIId: parseInt($scope.newSkillName),
+				Level: parseInt($scope.newSkillLevel)
+			};
 
+			$http({
+				method: 'POST',
+				url: '/api/interests',
+				data: data
+			}).then(function (response) {
+				console.log(response.data)
+				$http.get(interestsUrl).then(function (response) {
+					$scope.companyInterests = response.data;
+				});
+			})
 		};
 
 		$timeout(function () {

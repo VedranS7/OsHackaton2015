@@ -11,4 +11,8 @@
 		editableOptions.theme = 'bs3';
 	});
 
+	$(document).ready(function () {
+		$('.select2').select2();
+	});
+
 }(this) /* Auto-invoked */ );

@@ -50,7 +50,7 @@ namespace WebApp.Controllers_API
             db.UserFOIs.Add(userFOI);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = userFOI.Id }, userFOI);
+            return Ok();
         }
 
         // DELETE: api/Interests/5
