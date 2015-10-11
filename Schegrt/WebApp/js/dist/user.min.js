@@ -27,13 +27,7 @@
 			$scope.company = response.data;
 		});
 
-		$http.get(interestsUrl).then(function (response) {
-			$scope.companyInterests = response.data;
-		});
-
-		$http.get(matchesUrl).then(function (response) {
-			$scope.userRecommendations = response.data;
-		});
+		
 
 		$http.get(interestsListUrl).then(function (odgovora) {
 			$scope.interestsList = odgovora.data;
@@ -42,7 +36,7 @@
 		$('.select2').select2().on('change', function (e) {
 			var $this = $(e.currentTarget);
 			$scope.newSkillName = $this.val();
-		})
+		});
 
 		$scope.addSkill = function () {
 			var data = {
@@ -55,12 +49,29 @@
 				url: '/api/interests',
 				data: data
 			}).then(function (response) {
-				console.log(response.data)
-				$http.get(interestsUrl).then(function (response) {
-					$scope.companyInterests = response.data;
-				});
-			})
+				loadMatchesInterests();
+			});
 		};
+
+		$scope.deleteSkill = function (id) {
+			$http({
+				method: 'DELETE',
+				url: '/api/Interests/' + id
+			}).then(function (response) {
+				loadMatchesInterests();
+			});
+		};
+
+		function loadMatchesInterests () {
+			$http.get(interestsUrl).then(function (response) {
+				$scope.companyInterests = response.data;
+			});
+			$http.get(matchesUrl).then(function (response) {
+				$scope.userRecommendations = response.data;
+			});
+		}
+
+		loadMatchesInterests();
 
 		$timeout(function () {
 			$scope.$watchGroup(['company.CompanyName', 'company.Location', 'company.URL', 'company.Description'], function (newValues, oldValues, scope) { 
