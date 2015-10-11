@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WebApp.Models;
+using WebApp.Models.Field;
 
 namespace WebApp.Controllers
 {
@@ -34,6 +35,27 @@ namespace WebApp.Controllers
                 return HttpNotFound();
             }
             return View(providerUser);
+        }
+
+        public ActionResult Search(String location, int[] interestIds)
+        {
+            List<ProviderUser> initialResult = db.Users.OfType<ProviderUser>().ToList();
+            if (location != null) initialResult = initialResult.Where(pu => pu.Location == location).ToList();
+            if(interestIds != null && interestIds.Count() > 0)
+            {
+                initialResult = initialResult.Where(pu => hasInterest(interestIds, pu.Interests)).ToList();
+            }
+            return View(initialResult);
+        }
+
+        public bool hasInterest(int[] expectedInterestIds, IList<UserFOI> interests)
+        {
+            foreach(int interestId in expectedInterestIds)
+            {
+                if (interests.Select(x => x.Foi.Id).Contains(interestId)) return true;
+            }
+
+            return false;
         }
 
         protected override void Dispose(bool disposing)
