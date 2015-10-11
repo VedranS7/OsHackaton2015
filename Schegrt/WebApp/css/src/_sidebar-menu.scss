@@ -87,6 +87,23 @@
 	margin: 8px;
 	width: 268px;
 
+	&:hover {
+		span {
+			display: inline;
+		}
+	}
+
+	span {
+		display: none;
+	    position: absolute;
+	    top: 0;
+	    right: 8px;
+	    z-index: 2;
+	    font-size: 18px;
+	    font-weight: bold;
+	    color: white;
+		}
+
 	.bg {
 		background-color: #26A69A;	
 		border-radius: 5px;	

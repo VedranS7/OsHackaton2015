@@ -43,6 +43,7 @@
             <div class="skill" ng-repeat="item in companyInterests | orderBy: 'Level' track by $id(item)" ng-click="deleteSkill(item.Id)">
                 <div class="label">{{item.Name}}</div>
                 <div class="bg" style="width:  {{item.Level/5 * 100}}%"></div>
+                <span>&times;</span>
             </div>
 
         </div>
