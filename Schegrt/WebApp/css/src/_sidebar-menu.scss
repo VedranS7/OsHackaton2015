@@ -3,7 +3,7 @@
 	border-right: 1px solid #2e2e2e;
 	margin-left: -8px;
 	overflow-y: auto;
-	width: 200px;
+	width: 300px;
 
 	p {
 		color: #757575;
@@ -27,12 +27,14 @@
 			color: #757575;
 			margin-bottom: 8px;
 
+
 			&:last-child {
 				margin-bottom: 0;
 			}
 
 			a {
-				color: #757575;
+				color: #757575 !important;
+				text-decoration: none !important;
 			}
 
 			i {
@@ -48,8 +50,9 @@
 	.profile {
 		h4 {
 			color: #fff;
-			font-size: 2rem;
+			font-size: 20px;
 			margin-top: 5px;
+			padding: 6px 0;
 		}
 	}
 
@@ -57,5 +60,14 @@
 		border: 1px solid #2e2e2e;
 		border-top: 0 none;
 		padding-left: 8px;
+
+		&.description {			
+			padding-left: 12px;
+			min-height: 80px;
+
+			a {
+				color: #757575 !important;
+			}
+		}
 	}
 }

@@ -20,7 +20,8 @@
 @import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/utilities";
 @import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/responsive-utilities";
 
-// Font
+// Fonts
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/glyphicons";
 @import "../../bower_components/font-awesome/scss/variables";
 $fa-font-path:        "/fonts" !default;
 @import "../../bower_components/font-awesome/scss/mixins";

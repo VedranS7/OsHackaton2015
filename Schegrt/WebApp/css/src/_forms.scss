@@ -5,3 +5,22 @@ input.error {
 p.error {
 	color: red;
 }
+
+.editable {
+	border-bottom: 0 none !important;
+	color: $brand-primary !important;
+	text-decoration: none !important;
+}
+
+.editable-controls {
+	textarea {
+		display: block !important;
+		margin-bottom: 8px !important;
+		width: 270px !important;
+	}
+
+	.editable-buttons {
+		float: right;
+		margin-bottom: 8px !important;
+	}
+}

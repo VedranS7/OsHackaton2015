@@ -7,4 +7,8 @@
 		
 	}]);
 
+	appGlobal.run(function (editableOptions) {
+		editableOptions.theme = 'bs3';
+	});
+
 }(this) /* Auto-invoked */ );
