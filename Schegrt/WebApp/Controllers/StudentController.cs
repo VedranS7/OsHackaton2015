@@ -18,7 +18,8 @@ namespace WebApp.Controllers
         // GET: Student
         public ActionResult Index()
         {
-			return View(db.Users.OfType<StudentUser>().ToList());
+            StudentUser studentUser = db.Users.OfType<StudentUser>().FirstOrDefault(u => u.Email == User.Identity.Name);
+			return View(studentUser);
 			//st<StudentUser> studentUserList = new List<StudentUser>();
 			//var dbUsers = db.Users.ToList();
 			//foreach (GeneralUser user in dbUsers)
@@ -29,7 +30,7 @@ namespace WebApp.Controllers
 }
 
         // GET: Student/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
