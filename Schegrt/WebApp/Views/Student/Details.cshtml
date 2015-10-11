@@ -1,48 +1,25 @@
 ﻿@model WebApp.Models.StudentUser
 
-@{
-    Layout = null;
-}
-
-    <div>
-        <h4>StudentUser</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Email)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Email)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Location)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Location)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Name)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Name)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Surname)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Surname)
-            </dd>
-    
-        </dl>
+<aside id="sidebar-menu" class="" ng-controller="UserStudentController">
+    <input type="hidden" class="user-id" value="@Model.Id" />
+    <div class="sidebar-block">
+        <div class="profile">
+            <h4>{{company.StudentName}}</h4>
+        </div>
     </div>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
+    <div class="category">About</div>
+    <div class="sidebar-block">
+        <ul class="list-about">
+            <li><i class="fa fa-map-marker"></i>{{company.Location}}</li>
+            <li><i class="fa fa-link"></i> <a href="#">{{company.URL}}</a></li>
+            <li><i class="fa fa-envelope"></i> <a href="#">{{company.Email}}</a></li>
+        </ul>
+    </div>
+    <div class="category">Info</div>
+    <div class="sidebar-block">
+        <p>{{company.Description}}</p>
+    </div>
+    <div class="category">Skill set</div>
+</aside>
+
+<script src="~/js/dist/user.min.js" type="text/javascript"></script>
