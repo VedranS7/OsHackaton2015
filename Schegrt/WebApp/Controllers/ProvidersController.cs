@@ -39,11 +39,11 @@ namespace WebApp.Controllers
 
         public ActionResult Search(String location, int[] interestIds)
         {
-            IQueryable<ProviderUser> initialResult = db.Users.OfType<ProviderUser>();
-            if (location != null) initialResult = initialResult.Where(pu => pu.Location == location);
+            List<ProviderUser> initialResult = db.Users.OfType<ProviderUser>().ToList();
+            if (location != null) initialResult = initialResult.Where(pu => pu.Location == location).ToList();
             if(interestIds != null && interestIds.Count() > 0)
             {
-                initialResult = initialResult.Where(pu => hasInterest(interestIds, pu.Interests));
+                initialResult = initialResult.Where(pu => hasInterest(interestIds, pu.Interests)).ToList();
             }
             return View(initialResult);
         }
