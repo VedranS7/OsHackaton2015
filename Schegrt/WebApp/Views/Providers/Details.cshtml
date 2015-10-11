@@ -1,4 +1,7 @@
-﻿<aside id="sidebar-menu" class="" ng-controller="UserController">
+﻿@model WebApp.Models.ProviderUser
+
+<aside id="sidebar-menu" class="" ng-controller="UserController">
+    <input type="hidden" class="user-id" value="@Model.Id" />
     <div class="sidebar-block">
         <div class="profile">
             <h4>{{company.CompanyName}}</h4>
@@ -9,7 +12,7 @@
         <ul class="list-about">
             <li><i class="fa fa-map-marker"></i>{{company.Location}}</li>
             <li><i class="fa fa-link"></i> <a href="#">{{company.URL}}</a></li>
-            <li><i class="fa fa-email"></i> <a href="#">{{company.Email}}</a></li>
+            <li><i class="fa fa-envelope"></i> <a href="#">{{company.Email}}</a></li>
         </ul>
     </div>
     <div class="category">Info</div>
