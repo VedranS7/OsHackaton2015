@@ -4,12 +4,16 @@
 	var controller = ['$scope', '$element', '$http', '$timeout'];
 	controller.push(function ($scope, $element, $http, $timeout) {
 		$scope.company = {
-			StudentName: null,
 			Location: null,
 			URL: null,
 			Email: null,
-			Description: null
+			Description: null,
+			Name: null,
+			Surname: null
 		};
+
+		$scope.company.StudentName = $scope.company.Name + ' ' + $scope.company.Surname;
+
 		$scope.companyInterests = [];
 		$scope.userRecommendations = [];
 		$scope.editedInfo = false;
@@ -74,11 +78,15 @@
 		loadMatchesInterests();
 
 		$timeout(function () {
-			$scope.$watchGroup(['company.CompanyName', 'company.Location', 'company.URL', 'company.Description'], function (newValues, oldValues, scope) { 
-				$scope.company.CompanyName = newValues[0];
+			$scope.$watchGroup(['company.StudentName', 'company.Location', 'company.URL', 'company.Description'], function (newValues, oldValues, scope) { 
+				$scope.company.StudentName = newValues[0];
 				$scope.company.Location = newValues[1];
 				$scope.company.URL = newValues[2];
 				$scope.company.Description = newValues[3];
+
+				var nameSurname = $scope.company.StudentName.split(' ');
+				$scope.company.Name = nameSurname[0];
+				$scope.company.Surname = nameSurname[1];
 				
 				$http({
 					method: 'PUT',
