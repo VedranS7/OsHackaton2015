@@ -5,7 +5,7 @@
         <input type="hidden" class="user-id" value="@Model.Id" />
         <div class="sidebar-block">
             <div class="profile">
-                <h4><a href="#" editable-text="company.StudentName">{{company.StudentName || "empty"}}</a></h4>
+                <h4><a href="#" editable-text="company.StudentName">{{company.StudentName || (company.Name + ' ' + company.Surname) || 'empty'}}</a></h4>
             </div>
         </div>
         <div class="category">About</div>
